@@ -3,7 +3,9 @@
   <!-- ============================================================ hero -- -->
   <section class="hero">
     <div class="hero__bg" aria-hidden="true"></div>
-    <img class="hero__skyline" src="assets/img/skyline.svg" alt="" aria-hidden="true">
+    <div class="hero__photo" aria-hidden="true">
+      <img src="assets/img/photos/hero.svg" alt="" width="2400" height="1250">
+    </div>
     <div class="wrap hero__content">
       <p class="eyebrow" data-reveal>Risk Transfer &middot; Demolition &middot; Redevelopment</p>
       <h1 class="h-xl" data-reveal="80">We take on the sites<br><em>nobody else will.</em></h1>
@@ -51,7 +53,7 @@
   </section>
 
   <!-- ======================================================== services -- -->
-  <section class="section section--steel">
+  <section class="section section--asphalt">
     <div class="wrap">
       <div class="section-head" data-reveal>
         <p class="eyebrow">What we do</p>
@@ -201,10 +203,10 @@
           </a>
         </div>
       </div>
-      <div class="split__media" data-reveal="120">
-        <img src="assets/img/plant.svg" alt="Schematic elevation of a decommissioned generating station: cooling tower, boiler house and stack.">
+      <figure class="split__media photo photo--tint" data-reveal="120">
+        <img src="assets/img/photos/powerplant.svg" alt="A retired generating station at dusk: cooling tower, boiler house and stack standing over an empty yard." width="1600" height="1200" loading="lazy" decoding="async">
         <p class="tag-badge">Decommissioning</p>
-      </div>
+      </figure>
     </div>
   </section>
 
@@ -217,24 +219,28 @@
       </div>
       <div class="grid grid--4">
         <article class="card num-card" data-reveal>
+          <span class="num-card__mark" aria-hidden="true">1</span>
           <p class="num-card__step">01 / Assess</p>
           <h3>Diligence &amp; valuation</h3>
           <p>Site walkdown, environmental review, salvage inventory and a hard
              number on what closure actually costs.</p>
         </article>
         <article class="card num-card" data-reveal="80">
+          <span class="num-card__mark" aria-hidden="true">2</span>
           <p class="num-card__step">02 / Transfer</p>
           <h3>Structure the deal</h3>
           <p>Title, indemnity, insurance and bonding assembled into one
              agreement your board and counsel can sign.</p>
         </article>
         <article class="card num-card" data-reveal="160">
+          <span class="num-card__mark" aria-hidden="true">3</span>
           <p class="num-card__step">03 / Execute</p>
           <h3>Decommission &amp; clean</h3>
           <p>Abatement, demolition, recovery and remediation performed by our
              own crews and equipment, on our own schedule.</p>
         </article>
         <article class="card num-card" data-reveal="240">
+          <span class="num-card__mark" aria-hidden="true">4</span>
           <p class="num-card__step">04 / Reposition</p>
           <h3>Return it to use</h3>
           <p>Entitlement, utilities and site work that turn a closed plant into
@@ -245,7 +251,7 @@
   </section>
 
   <!-- ======================================================== projects -- -->
-  <section class="section section--steel">
+  <section class="section section--asphalt">
     <div class="wrap">
       <div class="section-head" data-reveal>
         <p class="eyebrow">Selected work</p>
@@ -256,8 +262,8 @@
 
       <div class="grid grid--3">
         <a class="project" href="news.html" data-reveal>
-          <div class="project__media">
-            <img src="assets/img/project-1.svg" alt="">
+          <div class="project__media photo">
+            <img src="assets/img/photos/demolition.svg" alt="High-reach demolition under way on a retired generating station, dust rising over the site." width="1600" height="1000" loading="lazy" decoding="async">
           </div>
           <div class="project__body">
             <p class="project__meta"><span>Energy</span><span>640 MW</span><span>Midwest</span></p>
@@ -268,8 +274,8 @@
         </a>
 
         <a class="project" href="news.html" data-reveal="80">
-          <div class="project__media">
-            <img src="assets/img/project-2.svg" alt="">
+          <div class="project__media photo">
+            <img src="assets/img/photos/tankfarm.svg" alt="Tank farm and process structures on a former container plant, hoarding across the frontage." width="1600" height="1000" loading="lazy" decoding="async">
           </div>
           <div class="project__body">
             <p class="project__meta"><span>Manufacturing</span><span>92 acres</span><span>Northeast</span></p>
@@ -280,8 +286,8 @@
         </a>
 
         <a class="project" href="news.html" data-reveal="160">
-          <div class="project__media">
-            <img src="assets/img/project-3.svg" alt="">
+          <div class="project__media photo">
+            <img src="assets/img/photos/millworks.svg" alt="Sawtooth roofline of a century-old paper mill against a dusk sky." width="1600" height="1000" loading="lazy" decoding="async">
           </div>
           <div class="project__body">
             <p class="project__meta"><span>Pulp &amp; Paper</span><span>1.4M sq ft</span><span>New England</span></p>
@@ -338,6 +344,7 @@
   </section>
 
   <!-- ============================================================= cta -- -->
+  <hr class="hazard-rule" aria-hidden="true">
   <section class="cta section section--tight">
     <div class="wrap">
       <div class="cta__inner">

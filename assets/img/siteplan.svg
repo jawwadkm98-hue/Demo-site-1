@@ -1,44 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" role="img" aria-label="Redevelopment site plan with parcels and access roads">
-  <rect width="800" height="640" fill="#0d1216"/>
+  <rect width="800" height="640" fill="#17150f"/>
   <g stroke="rgba(255,255,255,.05)" stroke-width="1">
     <path d="M0 40h800M0 120h800M0 200h800M0 280h800M0 360h800M0 440h800M0 520h800M0 600h800"/>
     <path d="M40 0v640M120 0v640M200 0v640M280 0v640M360 0v640M440 0v640M520 0v640M600 0v640M680 0v640M760 0v640"/>
   </g>
 
   <!-- boundary -->
-  <rect x="56" y="56" width="688" height="528" fill="none" stroke="#f0a11a" stroke-width="2" stroke-dasharray="14 8" opacity="0.75"/>
+  <rect x="56" y="56" width="688" height="528" fill="none" stroke="#ff5c00" stroke-width="2" stroke-dasharray="14 8" opacity="0.75"/>
 
   <!-- parcels -->
-  <g stroke="#33404b" stroke-width="2">
-    <rect x="96" y="96" width="248" height="180" fill="#161d24"/>
-    <rect x="376" y="96" width="328" height="180" fill="#131a20"/>
-    <rect x="96" y="356" width="180" height="188" fill="#131a20"/>
-    <rect x="308" y="356" width="180" height="188" fill="#161d24"/>
-    <rect x="520" y="356" width="184" height="188" fill="#131a20"/>
+  <g stroke="#4a4131" stroke-width="2">
+    <rect x="96" y="96" width="248" height="180" fill="#2a241b"/>
+    <rect x="376" y="96" width="328" height="180" fill="#221d16"/>
+    <rect x="96" y="356" width="180" height="188" fill="#221d16"/>
+    <rect x="308" y="356" width="180" height="188" fill="#2a241b"/>
+    <rect x="520" y="356" width="184" height="188" fill="#221d16"/>
   </g>
 
   <!-- rail spur -->
-  <g stroke="#42505c" stroke-width="2">
+  <g stroke="#5a4f3c" stroke-width="2">
     <path d="M96 316h608M96 328h608"/>
     <path d="M120 312v20M170 312v20M220 312v20M270 312v20M320 312v20M370 312v20M420 312v20M470 312v20M520 312v20M570 312v20M620 312v20M670 312v20"/>
   </g>
 
   <!-- building footprints -->
-  <g fill="#f0a11a" opacity="0.9">
+  <g fill="#ff5c00" opacity="0.9">
     <rect x="128" y="132" width="120" height="60"/>
     <rect x="416" y="132" width="180" height="44"/>
     <rect x="128" y="400" width="96" height="72"/>
     <rect x="560" y="400" width="104" height="96"/>
   </g>
-  <g fill="none" stroke="#f0a11a" stroke-width="2" opacity="0.55">
+  <g fill="none" stroke="#ff5c00" stroke-width="2" opacity="0.55">
     <rect x="272" y="204" width="56" height="48"/>
     <rect x="624" y="204" width="56" height="48"/>
     <rect x="340" y="404" width="112" height="96"/>
   </g>
 
   <!-- north arrow -->
-  <g transform="translate(700 596)" fill="#8f9ba6">
-    <path d="M0-26L8 6 0 0-8 6z" fill="#f0a11a"/>
+  <g transform="translate(700 596)" fill="#98907e">
+    <path d="M0-26L8 6 0 0-8 6z" fill="#ff5c00"/>
     <text x="0" y="24" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">N</text>
   </g>
 </svg>

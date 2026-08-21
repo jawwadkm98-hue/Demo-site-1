@@ -42,11 +42,15 @@ Netlify, Cloudflare Pages, S3 — anything that serves files).
 │   ├── header.html         sticky header and primary nav
 │   └── footer.html         footer + script tags
 ├── pages/                  the unique body of each page
-├── tools/build-pages.sh    assembles partials/ + pages/ into the root HTML
+├── tools/
+│   ├── build-pages.sh      assembles partials/ + pages/ into the root HTML
+│   └── make-plates.py      regenerates the placeholder image plates
 └── assets/
     ├── css/styles.css      all styling; design tokens live in :root
     ├── js/main.js          sticky header, mobile nav, scroll reveals, counters
-    └── img/*.svg           all artwork — hand-drawn SVG, no external images
+    └── img/
+        ├── *.svg           logo, site plan and coverage map (drawings)
+        └── photos/         image slots + placeholder plates (see its README)
 ```
 
 ### Editing
@@ -58,6 +62,8 @@ Netlify, Cloudflare Pages, S3 — anything that serves files).
   `tools/build-pages.sh`.
 - **Colors, type, spacing** → the `:root` token block at the top of
   `assets/css/styles.css`.
+- **Imagery** → `assets/img/photos/` — see the README there for what each slot
+  needs and how to swap in real photographs.
 
 The build script is a convenience, not a requirement: the root `.html` files are
 complete on their own, so you can also edit them directly and keep the sources
@@ -83,18 +89,36 @@ Then update, in order:
    addresses and the office address.
 5. Rebuild with `./tools/build-pages.sh`.
 
+## Design
+
+A working-site palette rather than a corporate one: warm bitumen and asphalt
+grounds, concrete and dust neutrals, **hi-vis safety orange** (`#FF5C00`) as the
+single accent carrying every call to action, **hazard yellow** (`#FFC61A`)
+rationed to the diagonal stripe motif that marks the transition into each page's
+closing band, and rust oxide for the image duotones. Every value is a token in
+`:root` — change the palette there and the whole site follows.
+
+Structural devices are meant to be true rather than decorative: the oversized
+stencil numerals appear only where the content genuinely is a sequence (the
+four-step process, the mobilisation timeline) and deliberately not on the
+Services page, where A/B/C are alternatives rather than steps.
+
 ## Notes
 
 - **The contact form has no backend.** It validates in the browser and shows a
   confirmation, but sends nothing. Point it at a form service (Formspree, Basin,
   a Lambda, …) in the `data-contact-form` handler at the bottom of
   `assets/js/main.js`.
-- **Artwork is all inline SVG** — industrial silhouettes, plant elevations, site
-  plans and an abstract coverage map. Nothing is loaded from a CDN, so the site
-  works offline and has no licensing questions. Swap in photography by replacing
-  the `<img>` sources in `pages/`.
-- **Fonts** are Oswald and Inter from Google Fonts, with full system fallbacks —
-  the site degrades cleanly if they are blocked or unavailable.
+- **The images are placeholders, not photographs.** `assets/img/photos/` holds
+  generated SVG scene plates cut to each slot's exact aspect ratio, so the
+  layout is final and real photography drops straight in — that folder's README
+  lists every slot and what to shoot for it. Regenerate the plates with
+  `python3 tools/make-plates.py`.
+- **The site plan and coverage map stay drawings** — they carry information a
+  photograph could not, so they are not photo slots.
+- **Fonts** are Oswald (signage headlines), Barlow (body) and IBM Plex Mono
+  (labels, figures, stencil numerals) from Google Fonts, each with a full system
+  fallback stack — the site degrades cleanly if they are blocked.
 - **Accessibility**: skip link, landmark regions, `aria-current` on the active
   nav item, visible focus rings, and all motion disabled under
   `prefers-reduced-motion`.
