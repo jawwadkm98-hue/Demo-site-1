@@ -1,10 +1,10 @@
-# Meridian Industrial Group — marketing site
+# Beltway Demo — marketing site
 
 A static, dependency-free marketing site for a heavy-industrial group:
 liability risk transfer, demolition, environmental remediation, asset recovery
 and industrial redevelopment.
 
-> **The name is a placeholder.** "Meridian Industrial Group" is a stand-in until
+> **The name is a placeholder.** "Beltway Demo" is a stand-in until
 > the real brand is decided — see [Renaming](#renaming) below. All copy, figures,
 > addresses, phone numbers and email addresses are illustrative.
 
@@ -71,18 +71,20 @@ in sync afterwards.
 
 ## Renaming
 
-Two find-and-replace passes cover the whole site:
+The brand name appears in one form only, so a single pass covers the copy.
+Edit the sources under `partials/` and `pages/`, never the built HTML at the
+repo root — that gets regenerated:
 
 ```bash
-grep -rl "Meridian Industrial Group" . --include="*.html" --include="*.md" \
-  | xargs sed -i 's/Meridian Industrial Group/Your Company Name/g'
-grep -rl "Meridian" . --include="*.html" | xargs sed -i 's/Meridian/YourCo/g'
+grep -rl "Beltway Demo" partials pages tools README.md \
+  | xargs sed -i 's/Beltway Demo/Your Company Name/g'
 ```
 
 Then update, in order:
 
-1. `partials/header.html` and `partials/footer.html` — the `MI` monogram in the
-   inline logo SVG, and `.brand__name` / `.brand__sub`.
+1. `partials/header.html` and `partials/footer.html` — the `DD` monogram in the
+   inline logo SVG, and `.brand__name` / `.brand__sub` (currently "Beltway Demo"
+   over "Industrial Group").
 2. `assets/img/favicon.svg` — same monogram.
 3. `tools/build-pages.sh` — the page titles and descriptions.
 4. `partials/footer.html` and `pages/contact.html` — phone numbers, email

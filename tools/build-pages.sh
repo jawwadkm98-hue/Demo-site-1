@@ -39,13 +39,13 @@ html_escape() {
 
 # slug|title|description
 PAGES=(
-"index|Meridian Industrial Group — Industrial Redevelopment & Risk Transfer|We acquire, decommission, remediate and reposition complex industrial assets across North America — transferring environmental and financial liability off your balance sheet."
-"about|About Us — Meridian Industrial Group|Eighteen years of demolition, environmental remediation and industrial redevelopment, backed by bonding capacity and in-house crews."
-"services|Services — Meridian Industrial Group|Liability risk transfer, demolition and implosion, environmental remediation, asset recovery, construction management and redevelopment."
-"areas-we-serve|Areas We Serve — Meridian Industrial Group|Regional coverage across North America, with self-performing crews mobilised from regional yards and equipment fleets."
-"news|News & Projects — Meridian Industrial Group|Acquisitions, project milestones and redevelopment updates from across the Meridian portfolio."
-"contact|Contact — Meridian Industrial Group|Talk to us about a shuttered facility, an environmental liability or a redevelopment opportunity."
-"privacy-policy|Privacy Policy — Meridian Industrial Group|How this site collects, uses and protects personal information."
+"index|Beltway Demo — Industrial Redevelopment & Risk Transfer|We acquire, decommission, remediate and reposition complex industrial assets across North America — transferring environmental and financial liability off your balance sheet."
+"about|About Us — Beltway Demo|Eighteen years of demolition, environmental remediation and industrial redevelopment, backed by bonding capacity and in-house crews."
+"services|Services — Beltway Demo|Liability risk transfer, demolition and implosion, environmental remediation, asset recovery, construction management and redevelopment."
+"areas-we-serve|Areas We Serve — Beltway Demo|Regional coverage across North America, with self-performing crews mobilised from regional yards and equipment fleets."
+"news|News & Projects — Beltway Demo|Acquisitions, project milestones and redevelopment updates from across the Beltway Demo portfolio."
+"contact|Contact — Beltway Demo|Talk to us about a shuttered facility, an environmental liability or a redevelopment opportunity."
+"privacy-policy|Privacy Policy — Beltway Demo|How this site collects, uses and protects personal information."
 )
 
 for entry in "${PAGES[@]}"; do

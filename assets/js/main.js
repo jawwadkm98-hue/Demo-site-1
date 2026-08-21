@@ -1,4 +1,4 @@
-/* Meridian Industrial Group — site behaviour.
+/* Beltway Demo — site behaviour.
    Plain ES2019, no dependencies. Every enhancement is optional: the site is
    fully readable and navigable with JavaScript disabled. */
 (function () {
@@ -35,7 +35,7 @@
       if (e.key === 'Escape') closeNav();
     });
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 880) closeNav();
+      if (window.innerWidth > 1100) closeNav();
     });
   }
 

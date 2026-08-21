@@ -1,7 +1,8 @@
 /* ==========================================================================
-   Meridian Industrial Group — core stylesheet
-   Placeholder brand. To rename, search the repo for "Meridian Industrial
-   Group" / "MERIDIAN" and replace; colors live in the :root tokens below.
+   Beltway Demo — core stylesheet
+   Placeholder brand; see "Renaming" in the README. Every colour, typeface and
+   spacing value is a token in the :root block below — change it there and the
+   whole site follows.
    ========================================================================== */
 
 /* --------------------------------------------------------------- tokens -- */
@@ -145,6 +146,7 @@ p:last-child { margin-bottom: 0; }
   border: 1px solid transparent;
   border-radius: var(--radius);
   cursor: pointer;
+  white-space: nowrap;
   transition: background var(--t), color var(--t), border-color var(--t), transform var(--t);
 }
 .btn svg { width: 1rem; height: 1rem; flex: none; transition: transform var(--t); }
@@ -195,7 +197,7 @@ p:last-child { margin-bottom: 0; }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
 .brand__name {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -208,8 +210,8 @@ p:last-child { margin-bottom: 0; }
   margin-top: 0.35rem;
 }
 
-.nav { display: flex; align-items: center; gap: 2rem; }
-.nav__list { display: flex; align-items: center; gap: 1.9rem; list-style: none; margin: 0; padding: 0; }
+.nav { display: flex; align-items: center; gap: 1.5rem; }
+.nav__list { display: flex; align-items: center; gap: 1.45rem; list-style: none; margin: 0; padding: 0; }
 .nav__link {
   position: relative;
   font-family: var(--font-display);
@@ -219,6 +221,7 @@ p:last-child { margin-bottom: 0; }
   text-transform: uppercase;
   color: var(--dust-light);
   padding: 0.35rem 0;
+  white-space: nowrap;
   transition: color var(--t);
 }
 .nav__link::after {
@@ -427,11 +430,11 @@ p:last-child { margin-bottom: 0; }
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
 }
+.split > * { min-width: 0; }
 .split--flip .split__media { order: -1; }
 .split__media {
   position: relative;
   aspect-ratio: 4 / 3.2;
-  min-height: min(420px, 58vh);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -699,7 +702,7 @@ p:last-child { margin-bottom: 0; }
   .stat:nth-last-child(-n+1) { border-bottom: 0; }
 }
 
-@media (max-width: 880px) {
+@media (max-width: 1100px) {
   .nav-toggle { display: grid; }
   .nav {
     position: fixed;
@@ -725,7 +728,7 @@ p:last-child { margin-bottom: 0; }
   .nav__link::after { display: none; }
   .nav .btn { margin-top: 1.5rem; justify-content: center; }
   .split, .split--flip .split__media { grid-template-columns: 1fr; order: 0; }
-  .split__media { aspect-ratio: 16 / 10; min-height: 0; }
+  .split__media { aspect-ratio: 16 / 10; }
   .cta__inner { flex-direction: column; align-items: flex-start; }
 }
 
@@ -770,7 +773,7 @@ p:last-child { margin-bottom: 0; }
 }
 .feature-post__body h3 { margin-bottom: 1rem; }
 .feature-post__body p:not(.project__meta):not(.card__more) { color: var(--dust); }
-@media (max-width: 880px) {
+@media (max-width: 1100px) {
   .feature-post { grid-template-columns: 1fr; }
   .feature-post__media { min-height: 0; aspect-ratio: 16 / 9; }
 }
