@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" role="img" aria-label="Decommissioned power generation facility, schematic elevation">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232d36"/><stop offset="1" stop-color="#0c1013"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="640" fill="url(#sky)"/>
+
+  <g stroke="rgba(255,255,255,.05)" stroke-width="1">
+    <path d="M0 80h800M0 160h800M0 240h800M0 320h800M0 400h800M0 480h800"/>
+    <path d="M80 0v640M160 0v640M240 0v640M320 0v640M400 0v640M480 0v640M560 0v640M640 0v640M720 0v640"/>
+  </g>
+
+  <!-- cooling tower -->
+  <path d="M96 560V300c0-52 34-64 34-108h108c0 44 34 56 34 108v260z" fill="#161d24" stroke="#2c3841" stroke-width="2"/>
+  <path d="M112 380h236M104 440h252M100 500h260" stroke="#222c34" stroke-width="2" fill="none"/>
+  <ellipse cx="184" cy="192" rx="54" ry="12" fill="#0f141a" stroke="#2c3841" stroke-width="2"/>
+
+  <!-- boiler house -->
+  <rect x="400" y="268" width="220" height="292" fill="#141a20" stroke="#2c3841" stroke-width="2"/>
+  <g fill="#0d1216">
+    <rect x="424" y="296" width="40" height="54"/><rect x="480" y="296" width="40" height="54"/>
+    <rect x="536" y="296" width="40" height="54"/><rect x="424" y="376" width="40" height="54"/>
+    <rect x="480" y="376" width="40" height="54"/><rect x="536" y="376" width="40" height="54"/>
+    <rect x="424" y="456" width="40" height="54"/><rect x="480" y="456" width="40" height="54"/>
+    <rect x="536" y="456" width="40" height="54"/>
+  </g>
+
+  <!-- stack -->
+  <path d="M660 560V150l14-9V96h22v45l14 9v410z" fill="#161d24" stroke="#2c3841" stroke-width="2"/>
+  <rect x="668" y="96" width="6" height="6" fill="#f0a11a"/>
+
+  <!-- conveyor -->
+  <g stroke="#2c3841" stroke-width="3" fill="none">
+    <path d="M270 470L400 372M270 492L400 394"/>
+    <path d="M300 486v74M340 456v104M380 428v132"/>
+  </g>
+
+  <!-- grade + hoarding -->
+  <rect x="0" y="560" width="800" height="80" fill="#0a0d10"/>
+  <path d="M0 560h800" stroke="#f0a11a" stroke-width="3" opacity="0.5"/>
+  <g stroke="#1c242b" stroke-width="2">
+    <path d="M40 560v46M120 560v46M200 560v46M280 560v46M360 560v46M440 560v46M520 560v46M600 560v46M680 560v46M760 560v46"/>
+  </g>
+</svg>

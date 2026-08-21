@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-label="Abstract map of operating regions with project markers">
+  <rect width="800" height="560" fill="#0d1216"/>
+  <g stroke="rgba(255,255,255,.05)" stroke-width="1">
+    <path d="M0 70h800M0 140h800M0 210h800M0 280h800M0 350h800M0 420h800M0 490h800"/>
+    <path d="M70 0v560M140 0v560M210 0v560M280 0v560M350 0v560M420 0v560M490 0v560M560 0v560M630 0v560M700 0v560"/>
+  </g>
+  <!-- abstract landmass -->
+  <path d="M92 196c60-52 148-76 236-64 74 10 118 46 190 44 62-2 108-28 158-14 38 10 40 62 12 104-32 48-40 92-92 118-64 32-142 22-214 42-78 22-142 54-196 22-52-30-56-100-74-146-14-38-52-70-20-106z"
+        fill="#141c23" stroke="#2a343d" stroke-width="2"/>
+  <!-- corridors -->
+  <g stroke="#f0a11a" stroke-width="2" opacity="0.45" fill="none" stroke-dasharray="8 7">
+    <path d="M212 300L392 236 552 292 664 244"/>
+    <path d="M212 300L318 402 508 388 604 330"/>
+  </g>
+  <!-- markers -->
+  <g fill="#f0a11a">
+    <circle cx="212" cy="300" r="8"/><circle cx="392" cy="236" r="8"/>
+    <circle cx="552" cy="292" r="8"/><circle cx="664" cy="244" r="8"/>
+    <circle cx="318" cy="402" r="8"/><circle cx="508" cy="388" r="8"/>
+    <circle cx="604" cy="330" r="8"/>
+  </g>
+  <g fill="none" stroke="#f0a11a" stroke-width="2" opacity="0.4">
+    <circle cx="212" cy="300" r="20"/><circle cx="552" cy="292" r="20"/><circle cx="392" cy="236" r="20"/>
+  </g>
+</svg>
