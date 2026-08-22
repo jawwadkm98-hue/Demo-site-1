@@ -35,7 +35,7 @@
       if (e.key === 'Escape') closeNav();
     });
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 880) closeNav();
+      if (window.innerWidth > 1100) closeNav();
     });
   }
 
@@ -63,14 +63,17 @@
     var runCount = function (el) {
       var target = parseFloat(el.getAttribute('data-count'));
       var decimals = (el.getAttribute('data-count').split('.')[1] || '').length;
-      if (reduceMotion) { el.textContent = target.toFixed(decimals); return; }
+      var fmt = function (v) {
+        return v.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      };
+      if (reduceMotion) { el.textContent = fmt(target); return; }
       var duration = 1400;
       var start = null;
       var step = function (now) {
         if (start === null) start = now;
         var p = Math.min((now - start) / duration, 1);
         var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = (target * eased).toFixed(decimals);
+        el.textContent = fmt(target * eased);
         if (p < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);

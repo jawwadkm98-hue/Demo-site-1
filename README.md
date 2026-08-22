@@ -25,8 +25,12 @@ Netlify, Cloudflare Pages, S3 — anything that serves files).
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home — hero, figures, capabilities, risk-transfer feature, process, projects, coverage |
-| `about.html` | Company story, figures, operating principles, bonding & compliance |
+| `index.html` | Home — hero, group figures, accreditations, capabilities, operating companies, risk-transfer feature, process, sectors, projects, coverage |
+| `about.html` | Company story, figures, operating principles, ownership & licensing, bonding & compliance |
+| `divisions.html` | The twelve operating companies and why the group is structured that way |
+| `sectors.html` | The ten industries served and what each one demands at closure |
+| `leadership.html` | Executive team and governance |
+| `careers.html` | Open roles, employment figures, what the group offers |
 | `services.html` | Eight capability blocks, plus the three ways clients engage |
 | `areas-we-serve.html` | Regional coverage, region-by-region detail, mobilisation timeline |
 | `news.html` | Featured release plus a grid of project and company updates |
@@ -85,6 +89,17 @@ Then update, in order:
 
 ## Notes
 
+- **Ownership and licensing.** The site states that the group is backed by
+  **WMB LLC**, which holds a construction contractor licence in the State of
+  Maryland. The licence number is a deliberate placeholder — `MD licence
+  #000000` — and appears in `partials/footer.html` and `pages/contact.html`.
+  **Replace it with the real number before the site goes live**, and check the
+  wording against how the licence is actually held.
+- **Every figure is illustrative.** Revenue, headcount, office and fleet counts,
+  EMR, bonding capacity, accreditations and all twelve company names are
+  placeholder content sized to read as a large group. Swap them for real
+  numbers, or remove any you cannot substantiate — published capability claims
+  are the kind of thing clients and prequalification bodies check.
 - **The contact form has no backend.** It validates in the browser and shows a
   confirmation, but sends nothing. Point it at a form service (Formspree, Basin,
   a Lambda, …) in the `data-contact-form` handler at the bottom of

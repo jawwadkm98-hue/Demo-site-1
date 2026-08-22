@@ -20,6 +20,31 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
+  <div class="utility">
+    <div class="wrap utility__inner">
+      <ul class="utility__facts">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke-linejoin="round"/>
+            <circle cx="12" cy="10" r="2.6"/>
+          </svg>
+          38 offices across North America
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z" stroke-linejoin="round"/>
+          </svg>
+          Backed by WMB LLC &middot; MD licensed
+        </li>
+      </ul>
+      <ul class="utility__links">
+        <li><a href="leadership.html">Leadership</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a class="is-strong" href="tel:+15550104411">24/7: +1 (555) 010-4411</a></li>
+      </ul>
+    </div>
+  </div>
+
   <div class="wrap header-inner">
     <a class="brand" href="index.html" aria-label="Meridian Industrial Group — home">
       <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
@@ -41,14 +66,15 @@
 
     <nav class="nav" id="primary-nav" aria-label="Primary">
       <ul class="nav__list">
-        <li><a class="nav__link" href="index.html">Home</a></li>
         <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="divisions.html">Divisions</a></li>
         <li><a class="nav__link" href="services.html">Services</a></li>
-        <li><a class="nav__link" href="areas-we-serve.html">Areas We Serve</a></li>
+        <li><a class="nav__link" href="sectors.html">Sectors</a></li>
+        <li><a class="nav__link" href="areas-we-serve.html">Locations</a></li>
         <li><a class="nav__link" href="news.html">News</a></li>
       </ul>
       <a class="btn btn--primary" href="contact.html">
-        Start a Conversation
+        Contact Us
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -147,11 +173,15 @@
         <h2 class="h-md">Reach the right desk</h2>
         <dl style="margin:2rem 0 0;">
           <div class="contact-line">
-            <dt>Head office</dt>
+            <dt>Group headquarters</dt>
             <dd>1 Foundry Way, Suite 400<br>Placeholder City, ST 00000</dd>
           </div>
           <div class="contact-line">
-            <dt>General</dt>
+            <dt>Ownership</dt>
+            <dd>Backed by WMB LLC &middot; licensed construction contractor,<br>State of Maryland &middot; MD licence #000000 (placeholder)</dd>
+          </div>
+          <div class="contact-line">
+            <dt>Corporate switchboard</dt>
             <dd><a href="tel:+15550104400">+1 (555) 010-4400</a> &middot; <a href="mailto:hello@example.com">hello@example.com</a></dd>
           </div>
           <div class="contact-line">
@@ -163,8 +193,16 @@
             <dd><a href="mailto:bids@example.com">bids@example.com</a></dd>
           </div>
           <div class="contact-line">
+            <dt>Prequalification &amp; vendor</dt>
+            <dd><a href="mailto:prequal@example.com">prequal@example.com</a></dd>
+          </div>
+          <div class="contact-line">
+            <dt>Media &amp; press</dt>
+            <dd><a href="mailto:press@example.com">press@example.com</a></dd>
+          </div>
+          <div class="contact-line">
             <dt>Careers</dt>
-            <dd><a href="mailto:careers@example.com">careers@example.com</a></dd>
+            <dd><a href="mailto:careers@example.com">careers@example.com</a> &middot; <a href="careers.html">open roles</a></dd>
           </div>
           <div class="contact-line">
             <dt>Emergency &amp; site security</dt>
@@ -181,26 +219,78 @@
   <section class="section section--light section--tight">
     <div class="wrap">
       <div class="section-head" data-reveal>
-        <p class="eyebrow">Regional offices</p>
-        <h2 class="h-lg">Where we're based</h2>
+        <p class="eyebrow">Locations</p>
+        <h2 class="h-lg">Twelve of our 38 offices and yards</h2>
+        <p class="lede">Crews and plant mobilise from the nearest regional yard.
+          All addresses on this page are placeholders for a demonstration site.</p>
       </div>
-      <div class="grid grid--4">
-        <article class="card" data-reveal>
-          <h3>Northeast</h3>
-          <p class="muted">Yard, fleet and estimating<br>Placeholder City, ST</p>
+      <div class="office-grid" data-reveal>
+        <article class="office">
+          <p class="office__region">Mid-Atlantic</p>
+          <h3>Group Headquarters</h3>
+          <p>Corporate, risk transfer, legal</p>
         </article>
-        <article class="card" data-reveal="80">
-          <h3>Mid-Atlantic</h3>
-          <p class="muted">Project office<br>Placeholder City, ST</p>
+        <article class="office">
+          <p class="office__region">Northeast</p>
+          <h3>Regional Yard &amp; Fleet</h3>
+          <p>Demolition, environmental, estimating</p>
         </article>
-        <article class="card" data-reveal="160">
-          <h3>Midwest</h3>
-          <p class="muted">Yard and metals processing<br>Placeholder City, ST</p>
+        <article class="office">
+          <p class="office__region">New England</p>
+          <h3>Project Office</h3>
+          <p>Mill and paper sector delivery</p>
         </article>
-        <article class="card" data-reveal="240">
-          <h3>Gulf Coast</h3>
-          <p class="muted">Project office<br>Placeholder City, ST</p>
+        <article class="office">
+          <p class="office__region">Great Lakes</p>
+          <h3>Regional Yard</h3>
+          <p>Demolition, metals processing</p>
         </article>
+        <article class="office">
+          <p class="office__region">Midwest</p>
+          <h3>Processing Yard</h3>
+          <p>Metals recovery, heavy haul</p>
+        </article>
+        <article class="office">
+          <p class="office__region">Southeast</p>
+          <h3>Regional Office</h3>
+          <p>Power sector decommissioning</p>
+        </article>
+        <article class="office">
+          <p class="office__region">Gulf Coast</p>
+          <h3>Regional Yard</h3>
+          <p>Petrochemical, marine, terminals</p>
+        </article>
+        <article class="office">
+          <p class="office__region">Mountain West</p>
+          <h3>Project Office</h3>
+          <p>Mining and remote generation</p>
+        </article>
+        <article class="office">
+          <p class="office__region">Pacific Northwest</p>
+          <h3>Project Office</h3>
+          <p>Marine and port infrastructure</p>
+        </article>
+        <article class="office">
+          <p class="office__region">Pacific Southwest</p>
+          <h3>Regional Office</h3>
+          <p>Commercial and institutional</p>
+        </article>
+        <article class="office">
+          <p class="office__region">Eastern Canada</p>
+          <h3>Project Office</h3>
+          <p>Cross-border delivery</p>
+        </article>
+        <article class="office">
+          <p class="office__region">Federal</p>
+          <h3>Federal Programs Office</h3>
+          <p>Government and defense contracting</p>
+        </article>
+      </div>
+      <div class="btn-row" data-reveal>
+        <a class="btn btn--ghost" href="areas-we-serve.html">
+          Coverage by region
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -208,7 +298,7 @@
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
+    <div class="footer-grid footer-grid--wide">
       <div class="footer-col footer-about">
         <a class="brand" href="index.html" aria-label="Meridian Industrial Group — home">
           <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
@@ -222,19 +312,25 @@
           </span>
         </a>
         <p>
-          We acquire, decommission, remediate and reposition heavy industrial
-          assets — taking the liability off the balance sheet and putting the
-          land back to work.
+          Twelve operating companies across demolition, environmental,
+          logistics and development — acquiring, decommissioning and
+          repositioning heavy industrial assets across North America.
         </p>
+        <div class="chip-row">
+          <span class="chip">$1.4B revenue</span>
+          <span class="chip">4,200 employees</span>
+          <span class="chip">38 offices</span>
+        </div>
       </div>
 
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>The Group</h4>
         <ul>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="areas-we-serve.html">Areas We Serve</a></li>
-          <li><a href="news.html">News</a></li>
+          <li><a href="divisions.html">Operating Companies</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="news.html">Newsroom</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -246,19 +342,41 @@
           <li><a href="services.html#demolition">Demolition &amp; Implosion</a></li>
           <li><a href="services.html#environmental">Environmental Remediation</a></li>
           <li><a href="services.html#recovery">Asset Recovery</a></li>
+          <li><a href="services.html#construction">Construction Management</a></li>
           <li><a href="services.html#development">Redevelopment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sectors</h4>
+        <ul>
+          <li><a href="sectors.html#power">Power Generation</a></li>
+          <li><a href="sectors.html#petrochemical">Oil, Gas &amp; Petrochemical</a></li>
+          <li><a href="sectors.html#steel">Steel &amp; Heavy Manufacturing</a></li>
+          <li><a href="sectors.html#federal">Federal &amp; Defense</a></li>
+          <li><a href="sectors.html#marine">Ports &amp; Marine</a></li>
+          <li><a href="sectors.html">All sectors</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:+15550104400">+1 (555) 010-4400</a></li>
+          <li><a href="tel:+15550104400">+1 (555) 010-4400</a><br><span class="muted">Corporate</span></li>
+          <li><a href="tel:+15550104411">+1 (555) 010-4411</a><br><span class="muted">24/7 emergency response</span></li>
           <li><a href="mailto:hello@example.com">hello@example.com</a></li>
-          <li>1 Foundry Way<br>Placeholder City, ST 00000</li>
+          <li><a href="areas-we-serve.html">All 38 locations</a></li>
         </ul>
       </div>
     </div>
+
+    <p class="footer-legal">
+      <strong>Meridian Industrial Group</strong> is backed by <strong>WMB LLC</strong>, which
+      holds a construction contractor licence in the State of Maryland
+      (MD licence <strong>#000000</strong> — placeholder, replace before launch).
+      Work is self-performed through the group's licensed operating companies;
+      licence numbers vary by state and are available on request.
+    </p>
 
     <div class="footer-bottom">
       <p>&copy; <span data-year>2026</span> Meridian Industrial Group. Placeholder brand — all content is illustrative.</p>
