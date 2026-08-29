@@ -29,7 +29,9 @@ Netlify, Cloudflare Pages, S3 — anything that serves files).
 | `about.html` | Company story, figures, operating principles, ownership & licensing, bonding & compliance |
 | `divisions.html` | The twelve operating companies and why the group is structured that way |
 | `sectors.html` | The ten industries served and what each one demands at closure |
-| `leadership.html` | Executive team and governance |
+| `investors.html` | FY25 results, five-year summary, revenue charts, filings and events |
+| `sustainability.html` | Safety and diversion performance, targets, community programmes |
+| `leadership.html` | Executive team, board of directors and committee structure |
 | `careers.html` | Open roles, employment figures, what the group offers |
 | `services.html` | Eight capability blocks, plus the three ways clients engage |
 | `areas-we-serve.html` | Regional coverage, region-by-region detail, mobilisation timeline |

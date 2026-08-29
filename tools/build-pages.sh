@@ -47,6 +47,8 @@ PAGES=(
 "sectors|Sectors Served — Meridian Industrial Group|Power, petrochemical, steel, automotive, pulp and paper, mining, federal, marine, chemical and commercial closure and redevelopment."
 "leadership|Leadership — Meridian Industrial Group|The executive team accountable for the group's long-term environmental and financial obligations."
 "careers|Careers — Meridian Industrial Group|Operators, scientists, drivers and project staff across 38 locations and twelve operating companies."
+"investors|Investor Relations — Meridian Industrial Group|FY2025 results, five-year financial summary, SEC filings and the investor events calendar for Meridian Industrial Group."
+"sustainability|Sustainability — Meridian Industrial Group|Safety, material diversion, emissions targets and community transition programmes across twenty-four operating companies."
 "news|News & Projects — Meridian Industrial Group|Acquisitions, project milestones and redevelopment updates from across the Meridian portfolio."
 "contact|Contact — Meridian Industrial Group|Talk to us about a shuttered facility, an environmental liability or a redevelopment opportunity."
 "privacy-policy|Privacy Policy — Meridian Industrial Group|How this site collects, uses and protects personal information."

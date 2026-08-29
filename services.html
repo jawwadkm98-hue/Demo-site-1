@@ -28,7 +28,7 @@
             <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke-linejoin="round"/>
             <circle cx="12" cy="10" r="2.6"/>
           </svg>
-          38 offices across North America
+          140 offices in 18 countries
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -38,7 +38,8 @@
         </li>
       </ul>
       <ul class="utility__links">
-        <li><a href="leadership.html">Leadership</a></li>
+        <li><span class="ticker">NYSE <b>MIG</b> <span class="is-up">$84.12 &#9650; 1.2%</span></span></li>
+        <li><a href="investors.html">Investors</a></li>
         <li><a href="careers.html">Careers</a></li>
         <li><a class="is-strong" href="tel:+15550104411">24/7: +1 (555) 010-4411</a></li>
       </ul>
@@ -66,12 +67,75 @@
 
     <nav class="nav" id="primary-nav" aria-label="Primary">
       <ul class="nav__list">
-        <li><a class="nav__link" href="about.html">About</a></li>
-        <li><a class="nav__link" href="divisions.html">Divisions</a></li>
-        <li><a class="nav__link" href="services.html" aria-current="page">Services</a></li>
-        <li><a class="nav__link" href="sectors.html">Sectors</a></li>
+        <li class="nav__item" data-mega>
+          <button class="nav__link nav__trigger" type="button" aria-expanded="false" aria-controls="mega-group">
+            The Group <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="mega" id="mega-group">
+            <div class="mega__grid">
+              <div class="mega__col">
+                <h3>Company</h3>
+                <ul>
+                  <li><a href="about.html">About Meridian <small>History, structure and how we operate</small></a></li>
+                  <li><a href="leadership.html">Leadership &amp; Board <small>Executive team and governance</small></a></li>
+                  <li><a href="divisions.html">Operating Companies <small>All twenty-four businesses</small></a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <h3>Stakeholders</h3>
+                <ul>
+                  <li><a href="investors.html">Investor Relations <small>Results, filings and events</small></a></li>
+                  <li><a href="sustainability.html">Sustainability <small>Targets, safety and community</small></a></li>
+                  <li><a href="careers.html">Careers <small>21,400 people across 18 countries</small></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega__foot">
+              <p>A holding group of twenty-four companies operating in 18 countries.</p>
+              <a class="link-arrow" href="about.html">About the group
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav__item" data-mega>
+          <button class="nav__link nav__trigger" type="button" aria-expanded="false" aria-controls="mega-work">
+            What We Do <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="mega" id="mega-work">
+            <div class="mega__grid">
+              <div class="mega__col">
+                <h3>Capabilities</h3>
+                <ul>
+                  <li><a href="services.html#risk-transfer">Liability Risk Transfer</a></li>
+                  <li><a href="services.html#demolition">Demolition &amp; Implosion</a></li>
+                  <li><a href="services.html#environmental">Environmental Remediation</a></li>
+                  <li><a href="services.html#recovery">Asset Recovery &amp; Recycling</a></li>
+                  <li><a href="services.html" aria-current="page">All capabilities</a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <h3>Sectors</h3>
+                <ul>
+                  <li><a href="sectors.html#power">Power Generation</a></li>
+                  <li><a href="sectors.html#petrochemical">Oil, Gas &amp; Petrochemical</a></li>
+                  <li><a href="sectors.html#steel">Steel &amp; Heavy Manufacturing</a></li>
+                  <li><a href="sectors.html#federal">Federal &amp; Defense</a></li>
+                  <li><a href="sectors.html">All ten sectors</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega__foot">
+              <p>Self-performed through the group's own crews, plant and laboratories.</p>
+              <a class="link-arrow" href="divisions.html">How the group delivers
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </li>
+
         <li><a class="nav__link" href="areas-we-serve.html">Locations</a></li>
-        <li><a class="nav__link" href="news.html">News</a></li>
+        <li><a class="nav__link" href="investors.html">Investors</a></li>
+        <li><a class="nav__link" href="news.html">Newsroom</a></li>
       </ul>
       <a class="btn btn--primary" href="contact.html">
         Contact Us
@@ -328,15 +392,28 @@
           </span>
         </a>
         <p>
-          Twelve operating companies across demolition, environmental,
+          Twenty-four operating companies across demolition, environmental,
           logistics and development — acquiring, decommissioning and
-          repositioning heavy industrial assets across North America.
+          repositioning heavy industrial assets in 18 countries.
         </p>
         <div class="chip-row">
-          <span class="chip">$1.4B revenue</span>
-          <span class="chip">4,200 employees</span>
-          <span class="chip">38 offices</span>
+          <span class="chip">$6.8B revenue</span>
+          <span class="chip">21,400 employees</span>
+          <span class="chip">140 offices</span>
+          <span class="chip">18 countries</span>
+          <span class="chip">NYSE: MIG</span>
         </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Investors</h4>
+        <ul>
+          <li><a href="investors.html">Results &amp; filings</a></li>
+          <li><a href="investors.html">Financial calendar</a></li>
+          <li><a href="sustainability.html">Sustainability report</a></li>
+          <li><a href="leadership.html">Board &amp; governance</a></li>
+          <li><a href="mailto:investors@example.com">IR contact</a></li>
+        </ul>
       </div>
 
       <div class="footer-col">
@@ -344,7 +421,7 @@
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="divisions.html">Operating Companies</a></li>
-          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="leadership.html">Leadership &amp; Board</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><a href="news.html">Newsroom</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -381,7 +458,7 @@
           <li><a href="tel:+15550104400">+1 (555) 010-4400</a><br><span class="muted">Corporate</span></li>
           <li><a href="tel:+15550104411">+1 (555) 010-4411</a><br><span class="muted">24/7 emergency response</span></li>
           <li><a href="mailto:hello@example.com">hello@example.com</a></li>
-          <li><a href="areas-we-serve.html">All 38 locations</a></li>
+          <li><a href="areas-we-serve.html">All 140 locations</a></li>
         </ul>
       </div>
     </div>
@@ -397,8 +474,12 @@
     <div class="footer-bottom">
       <p>&copy; <span data-year>2026</span> Meridian Industrial Group. Placeholder brand — all content is illustrative.</p>
       <nav aria-label="Legal">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="privacy-policy.html">Terms</a>
+        <a href="privacy-policy.html">Cookies</a>
+        <a href="privacy-policy.html">Modern Slavery Statement</a>
+        <a href="privacy-policy.html">Accessibility</a>
+        <a href="mailto:ethics@example.com">Ethics Line</a>
       </nav>
     </div>
   </div>

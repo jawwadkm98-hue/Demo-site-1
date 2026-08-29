@@ -28,7 +28,7 @@
             <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke-linejoin="round"/>
             <circle cx="12" cy="10" r="2.6"/>
           </svg>
-          38 offices across North America
+          140 offices in 18 countries
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -38,7 +38,8 @@
         </li>
       </ul>
       <ul class="utility__links">
-        <li><a href="leadership.html">Leadership</a></li>
+        <li><span class="ticker">NYSE <b>MIG</b> <span class="is-up">$84.12 &#9650; 1.2%</span></span></li>
+        <li><a href="investors.html">Investors</a></li>
         <li><a href="careers.html">Careers</a></li>
         <li><a class="is-strong" href="tel:+15550104411">24/7: +1 (555) 010-4411</a></li>
       </ul>
@@ -66,12 +67,75 @@
 
     <nav class="nav" id="primary-nav" aria-label="Primary">
       <ul class="nav__list">
-        <li><a class="nav__link" href="about.html">About</a></li>
-        <li><a class="nav__link" href="divisions.html" aria-current="page">Divisions</a></li>
-        <li><a class="nav__link" href="services.html">Services</a></li>
-        <li><a class="nav__link" href="sectors.html">Sectors</a></li>
+        <li class="nav__item" data-mega>
+          <button class="nav__link nav__trigger" type="button" aria-expanded="false" aria-controls="mega-group">
+            The Group <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="mega" id="mega-group">
+            <div class="mega__grid">
+              <div class="mega__col">
+                <h3>Company</h3>
+                <ul>
+                  <li><a href="about.html">About Meridian <small>History, structure and how we operate</small></a></li>
+                  <li><a href="leadership.html">Leadership &amp; Board <small>Executive team and governance</small></a></li>
+                  <li><a href="divisions.html" aria-current="page">Operating Companies <small>All twenty-four businesses</small></a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <h3>Stakeholders</h3>
+                <ul>
+                  <li><a href="investors.html">Investor Relations <small>Results, filings and events</small></a></li>
+                  <li><a href="sustainability.html">Sustainability <small>Targets, safety and community</small></a></li>
+                  <li><a href="careers.html">Careers <small>21,400 people across 18 countries</small></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega__foot">
+              <p>A holding group of twenty-four companies operating in 18 countries.</p>
+              <a class="link-arrow" href="about.html">About the group
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav__item" data-mega>
+          <button class="nav__link nav__trigger" type="button" aria-expanded="false" aria-controls="mega-work">
+            What We Do <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="mega" id="mega-work">
+            <div class="mega__grid">
+              <div class="mega__col">
+                <h3>Capabilities</h3>
+                <ul>
+                  <li><a href="services.html#risk-transfer">Liability Risk Transfer</a></li>
+                  <li><a href="services.html#demolition">Demolition &amp; Implosion</a></li>
+                  <li><a href="services.html#environmental">Environmental Remediation</a></li>
+                  <li><a href="services.html#recovery">Asset Recovery &amp; Recycling</a></li>
+                  <li><a href="services.html">All capabilities</a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <h3>Sectors</h3>
+                <ul>
+                  <li><a href="sectors.html#power">Power Generation</a></li>
+                  <li><a href="sectors.html#petrochemical">Oil, Gas &amp; Petrochemical</a></li>
+                  <li><a href="sectors.html#steel">Steel &amp; Heavy Manufacturing</a></li>
+                  <li><a href="sectors.html#federal">Federal &amp; Defense</a></li>
+                  <li><a href="sectors.html">All ten sectors</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega__foot">
+              <p>Self-performed through the group's own crews, plant and laboratories.</p>
+              <a class="link-arrow" href="divisions.html">How the group delivers
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </li>
+
         <li><a class="nav__link" href="areas-we-serve.html">Locations</a></li>
-        <li><a class="nav__link" href="news.html">News</a></li>
+        <li><a class="nav__link" href="investors.html">Investors</a></li>
+        <li><a class="nav__link" href="news.html">Newsroom</a></li>
       </ul>
       <a class="btn btn--primary" href="contact.html">
         Contact Us
@@ -88,7 +152,7 @@
     <div class="wrap">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>Divisions</span></nav>
       <p class="eyebrow">Operating companies</p>
-      <h1 class="h-lg">Twelve companies under one holding group</h1>
+      <h1 class="h-lg">Twenty-four companies under one holding group</h1>
       <p class="lede">Meridian is a holding group, not a general contractor with a subcontractor list. Every discipline below is a company we own, staff and equip — which is why the group can price a whole-site obligation and stand behind it for its full life.</p>
     </div>
   </section>
@@ -97,19 +161,19 @@
     <div class="wrap">
       <div class="grid grid--4">
         <div class="stat" data-reveal>
-          <p class="stat__num"><span data-count="12">0</span></p>
+          <p class="stat__num"><span data-count="24">0</span></p>
           <p class="stat__label">Operating companies</p>
         </div>
         <div class="stat" data-reveal="80">
-          <p class="stat__num"><span data-count="4200">0</span></p>
+          <p class="stat__num"><span data-count="21400">0</span></p>
           <p class="stat__label">Employees &amp; operators</p>
         </div>
         <div class="stat" data-reveal="160">
-          <p class="stat__num"><span data-count="1100">0</span></p>
+          <p class="stat__num"><span data-count="5600">0</span></p>
           <p class="stat__label">Units of owned plant</p>
         </div>
         <div class="stat" data-reveal="240">
-          <p class="stat__num"><i>$</i><span data-count="600">0</span><i>M</i></p>
+          <p class="stat__num"><i>$</i><span data-count="2.4">0</span><i>B</i></p>
           <p class="stat__label">Bonding capacity</p>
         </div>
       </div>
@@ -122,14 +186,14 @@
         <article class="division" data-reveal="0">
           <p class="division__discipline">Demolition</p>
           <h3 class="division__name">Meridian Demolition</h3>
-          <p>Structural, mechanical and explosive demolition of process plant, stacks and cooling towers. Nine regional crews, each with its own high-reach fleet.</p>
-          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">1,240 staff</p>
+          <p>Structural, mechanical and explosive demolition of process plant, stacks and cooling towers. Thirty-one regional crews, each with its own high-reach fleet.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">5,400 staff</p>
         </article>
         <article class="division" data-reveal="60">
           <p class="division__discipline">Environmental</p>
           <h3 class="division__name">Meridian Environmental</h3>
           <p>Abatement, soil and groundwater remediation, tank and lagoon closure, and the sampling record that closes a file with the regulator.</p>
-          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">680 staff</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">3,100 staff</p>
         </article>
         <article class="division" data-reveal="120">
           <p class="division__discipline">Risk transfer</p>
@@ -141,25 +205,25 @@
           <p class="division__discipline">Plant services</p>
           <h3 class="division__name">Meridian Industrial Services</h3>
           <p>Decommissioning, de-energising, chemical cleaning and purging, plus care-and-custody programmes for facilities held before disposition.</p>
-          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">520 staff</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">2,400 staff</p>
         </article>
         <article class="division" data-reveal="60">
           <p class="division__discipline">Metals</p>
           <h3 class="division__name">Meridian Metals Recovery</h3>
           <p>Ferrous and non-ferrous processing, plus resale of turbines, transformers and machine tools recovered from group projects.</p>
-          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">6 processing yards</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">19 processing yards</p>
         </article>
         <article class="division" data-reveal="120">
           <p class="division__discipline">Logistics</p>
           <h3 class="division__name">Meridian Heavy Haul</h3>
           <p>Bulk, debris and oversize transport, running to group sites first and to third parties on contract.</p>
-          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">410 trucks</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">1,880 trucks</p>
         </article>
         <article class="division" data-reveal="0">
           <p class="division__discipline">Equipment</p>
           <h3 class="division__name">Meridian Plant &amp; Equipment</h3>
           <p>Owns and maintains the group's excavators, processors, attachments and support equipment; rents bare or operated.</p>
-          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">1,100 units</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">5,600 units</p>
         </article>
         <article class="division" data-reveal="60">
           <p class="division__discipline">Development</p>
@@ -171,13 +235,13 @@
           <p class="division__discipline">Federal</p>
           <h3 class="division__name">Meridian Federal Services</h3>
           <p>Government and defense contracting: base closures and federal facility decommissioning under federal acquisition rules.</p>
-          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">340 staff</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">1,500 staff</p>
         </article>
         <article class="division" data-reveal="0">
           <p class="division__discipline">Marine</p>
           <h3 class="division__name">Meridian Marine &amp; Port</h3>
           <p>Dock, wharf and offshore structure removal, marine demolition and dredge-adjacent remediation.</p>
-          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">260 staff</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">1,150 staff</p>
         </article>
         <article class="division" data-reveal="60">
           <p class="division__discipline">Implosion</p>
@@ -190,6 +254,79 @@
           <h3 class="division__name">Meridian Asset Advisory</h3>
           <p>Valuation of shuttered facilities, salvage inventories and the closure-cost modelling that prices every group acquisition.</p>
           <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">Corporate</p>
+        </article>
+
+        <article class="division" data-reveal="0">
+          <p class="division__discipline">Nuclear</p>
+          <h3 class="division__name">Meridian Nuclear Services</h3>
+          <p>Licensed decommissioning of reactor ancillary structures, radiological survey and waste packaging.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">820 staff</p>
+        </article>
+        <article class="division" data-reveal="60">
+          <p class="division__discipline">Abatement</p>
+          <h3 class="division__name">Meridian Abatement</h3>
+          <p>Asbestos, lead and mould abatement at scale, including occupied and phased building programmes.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">2,700 staff</p>
+        </article>
+        <article class="division" data-reveal="120">
+          <p class="division__discipline">Waste</p>
+          <h3 class="division__name">Meridian Waste Solutions</h3>
+          <p>Characterisation, transport and licensed disposal of hazardous and non-hazardous waste streams.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">1,340 staff</p>
+        </article>
+        <article class="division" data-reveal="0">
+          <p class="division__discipline">Water</p>
+          <h3 class="division__name">Meridian Water &amp; Soils</h3>
+          <p>Groundwater treatment, dewatering, soil washing and long-term monitoring networks.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">960 staff</p>
+        </article>
+        <article class="division" data-reveal="60">
+          <p class="division__discipline">Asbestos survey</p>
+          <h3 class="division__name">Meridian Survey &amp; Testing</h3>
+          <p>Accredited laboratories and survey teams supporting every group project and third-party clients.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">610 staff</p>
+        </article>
+        <article class="division" data-reveal="120">
+          <p class="division__discipline">Concrete</p>
+          <h3 class="division__name">Meridian Aggregates</h3>
+          <p>On-site crushing and screening turning demolition arisings into certified recycled aggregate.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">12 plants</p>
+        </article>
+        <article class="division" data-reveal="0">
+          <p class="division__discipline">Rail</p>
+          <h3 class="division__name">Meridian Rail Services</h3>
+          <p>Track removal, spur reinstatement and rail-served logistics on industrial parcels.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">540 staff</p>
+        </article>
+        <article class="division" data-reveal="60">
+          <p class="division__discipline">Europe</p>
+          <h3 class="division__name">Meridian Industrial Europe</h3>
+          <p>The group's European platform, delivering across the UK, Benelux, Germany and Poland.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">2,100 staff</p>
+        </article>
+        <article class="division" data-reveal="120">
+          <p class="division__discipline">Canada</p>
+          <h3 class="division__name">Meridian Canada</h3>
+          <p>Demolition, environmental and metals operations across Ontario, Quebec and the Prairies.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">1,180 staff</p>
+        </article>
+        <article class="division" data-reveal="0">
+          <p class="division__discipline">Latin America</p>
+          <h3 class="division__name">Meridian Latinoamérica</h3>
+          <p>Mining, smelting and port decommissioning across Mexico, Chile and Peru.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">900 staff</p>
+        </article>
+        <article class="division" data-reveal="60">
+          <p class="division__discipline">Insurance</p>
+          <h3 class="division__name">Meridian Captive Insurance</h3>
+          <p>The group's captive insurer, underwriting a retained layer beneath the commercial market.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">Corporate</p>
+        </article>
+        <article class="division" data-reveal="120">
+          <p class="division__discipline">Technology</p>
+          <h3 class="division__name">Meridian Digital</h3>
+          <p>Survey, drone and modelling teams producing the digital twin behind every takedown plan.</p>
+          <p class="muted" style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;">260 staff</p>
         </article>
       </div>
     </div>
@@ -259,15 +396,28 @@
           </span>
         </a>
         <p>
-          Twelve operating companies across demolition, environmental,
+          Twenty-four operating companies across demolition, environmental,
           logistics and development — acquiring, decommissioning and
-          repositioning heavy industrial assets across North America.
+          repositioning heavy industrial assets in 18 countries.
         </p>
         <div class="chip-row">
-          <span class="chip">$1.4B revenue</span>
-          <span class="chip">4,200 employees</span>
-          <span class="chip">38 offices</span>
+          <span class="chip">$6.8B revenue</span>
+          <span class="chip">21,400 employees</span>
+          <span class="chip">140 offices</span>
+          <span class="chip">18 countries</span>
+          <span class="chip">NYSE: MIG</span>
         </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Investors</h4>
+        <ul>
+          <li><a href="investors.html">Results &amp; filings</a></li>
+          <li><a href="investors.html">Financial calendar</a></li>
+          <li><a href="sustainability.html">Sustainability report</a></li>
+          <li><a href="leadership.html">Board &amp; governance</a></li>
+          <li><a href="mailto:investors@example.com">IR contact</a></li>
+        </ul>
       </div>
 
       <div class="footer-col">
@@ -275,7 +425,7 @@
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="divisions.html">Operating Companies</a></li>
-          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="leadership.html">Leadership &amp; Board</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><a href="news.html">Newsroom</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -312,7 +462,7 @@
           <li><a href="tel:+15550104400">+1 (555) 010-4400</a><br><span class="muted">Corporate</span></li>
           <li><a href="tel:+15550104411">+1 (555) 010-4411</a><br><span class="muted">24/7 emergency response</span></li>
           <li><a href="mailto:hello@example.com">hello@example.com</a></li>
-          <li><a href="areas-we-serve.html">All 38 locations</a></li>
+          <li><a href="areas-we-serve.html">All 140 locations</a></li>
         </ul>
       </div>
     </div>
@@ -328,8 +478,12 @@
     <div class="footer-bottom">
       <p>&copy; <span data-year>2026</span> Meridian Industrial Group. Placeholder brand — all content is illustrative.</p>
       <nav aria-label="Legal">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="privacy-policy.html">Terms</a>
+        <a href="privacy-policy.html">Cookies</a>
+        <a href="privacy-policy.html">Modern Slavery Statement</a>
+        <a href="privacy-policy.html">Accessibility</a>
+        <a href="mailto:ethics@example.com">Ethics Line</a>
       </nav>
     </div>
   </div>
