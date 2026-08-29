@@ -10,7 +10,7 @@ repo root — then run `./tools/build-pages.sh`.
 
 | What | Placeholder now | Where |
 | --- | --- | --- |
-| Company name | "Meridian Industrial Group" | everywhere — see **Renaming** in README.md |
+| Company name | "Beltway Demolition" | everywhere — see **Renaming** in README.md |
 | Maryland licence number | `#000000` | `partials/footer.html`, `pages/about.html` |
 | Phone | `+1 (555) 010-4400` | `partials/header.html`, `partials/footer.html`, `pages/index.html`, `pages/contact.html` |
 | Email | `hello@example.com` | `partials/footer.html`, `pages/contact.html` |
@@ -43,7 +43,11 @@ credibility signal *when true*:
 - Years in business, and the founding year
 - Number of staff and crews
 - Completed project count, or a handful of named jobs with photos
-- Real project photography (see `assets/img/photos/` guidance in README.md)
+- **Real project photography.** The images on the site now are generated
+  placeholder illustrations, not photographs — see
+  `assets/img/photos/README.md` for the six slots, what to shoot for each and
+  how to swap them in. Before/after pairs of your own jobs are the single most
+  persuasive thing you can add.
 - Client references or testimonials
 - Bonding capacity, if bonded
 - Trade association memberships, if held

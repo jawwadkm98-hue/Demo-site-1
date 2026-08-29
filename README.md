@@ -1,9 +1,9 @@
-# Meridian Industrial Group — marketing site
+# Beltway Demolition — marketing site
 
 A static, dependency-free marketing site for a demolition and site clearance
 contractor working in Maryland, Washington DC and Virginia, backed by WMB LLC.
 
-> **The name is a placeholder.** "Meridian Industrial Group" is a stand-in until
+> **The name is a placeholder.** "Beltway Demolition" is a stand-in until
 > the real brand is decided — see [Renaming](#renaming) below. Contact details
 > and the licence number are placeholders too; see
 > [`CONTENT-TODO.md`](CONTENT-TODO.md).
@@ -67,9 +67,9 @@ in sync afterwards.
 Two find-and-replace passes cover the whole site:
 
 ```bash
-grep -rl "Meridian Industrial Group" . --include="*.html" --include="*.md" \
-  | xargs sed -i 's/Meridian Industrial Group/Your Company Name/g'
-grep -rl "Meridian" . --include="*.html" | xargs sed -i 's/Meridian/YourCo/g'
+grep -rl "Beltway Demolition" . --include="*.html" --include="*.md" \
+  | xargs sed -i 's/Beltway Demolition/Your Company Name/g'
+grep -rl "Beltway Demolition" . --include="*.html" | xargs sed -i 's/Beltway Demolition/YourCo/g'
 ```
 
 Then update, in order:

@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Meridian Industrial Group — core stylesheet
-   Placeholder brand. To rename, search the repo for "Meridian Industrial
-   Group" / "MERIDIAN" and replace; colors live in the :root tokens below.
+   Beltway Demolition — core stylesheet
+   Placeholder brand; see "Renaming" in README.md. Colours, type and spacing
+   are tokens in the :root block below.
    ========================================================================== */
 
 /* --------------------------------------------------------------- tokens -- */
@@ -844,3 +844,53 @@ p:last-child { margin-bottom: 0; }
   color: var(--fog-light);
   max-width: 78ch;
 }
+
+/* ============================================================== imagery ==
+   Photo slots. Each is a fixed aspect ratio with the image cropped to fill,
+   so swapping a placeholder plate for a real photograph is a file change and
+   nothing reflows. */
+.photo { position: relative; display: block; margin: 0; overflow: hidden; background: var(--steel-800); }
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Settle mixed sources into one look. */
+  filter: saturate(0.85) contrast(1.05);
+}
+
+/* Hero photograph sits behind the headline, under a scrim that keeps the
+   type legible whatever the image. */
+.hero__photo { position: absolute; inset: 0; z-index: -2; }
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 72%;
+  filter: saturate(0.8) contrast(1.05);
+}
+.hero__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(95deg, rgba(10, 12, 14, 0.94) 4%, rgba(10, 12, 14, 0.62) 38%, rgba(10, 12, 14, 0.12) 100%),
+    linear-gradient(0deg, var(--ink) 1%, transparent 34%);
+}
+
+/* Interior page heads get the same treatment at lower contrast. */
+.page-hero__photo { position: absolute; inset: 0; z-index: 0; }
+.page-hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.7) contrast(1.04) brightness(0.62);
+}
+.page-hero__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(92deg, var(--ink) 8%, rgba(10, 12, 14, 0.82) 52%, rgba(10, 12, 14, 0.5) 100%),
+    linear-gradient(0deg, var(--ink) 1%, transparent 55%);
+}
+.page-hero .wrap { position: relative; z-index: 1; }

@@ -39,12 +39,12 @@ html_escape() {
 
 # slug|title|description
 PAGES=(
-"index|Meridian Industrial Group — Demolition, Environmental & Site Redevelopment|A construction and demolition contractor serving Maryland, Washington DC and Virginia. Backed by WMB LLC, a licensed Maryland construction contractor."
-"about|About Us — Meridian Industrial Group|Who we are, how we work, and the licensing and backing behind the company."
-"services|Services — Meridian Industrial Group|Demolition, environmental remediation, site clearance, asset recovery and construction management."
-"areas-we-serve|Areas We Serve — Meridian Industrial Group|Serving Maryland, Washington DC, Virginia and the surrounding Mid-Atlantic."
-"contact|Contact — Meridian Industrial Group|Talk to us about a shuttered facility, an environmental liability or a redevelopment opportunity."
-"privacy-policy|Privacy Policy — Meridian Industrial Group|How this site collects, uses and protects personal information."
+"index|Beltway Demolition — Demolition & Site Clearance in Maryland, DC & Virginia|A construction and demolition contractor serving Maryland, Washington DC and Virginia. Backed by WMB LLC, a licensed Maryland construction contractor."
+"about|About Us — Beltway Demolition|Who we are, how we work, and the licensing and backing behind the company."
+"services|Services — Beltway Demolition|Demolition, environmental remediation, site clearance, asset recovery and construction management."
+"areas-we-serve|Areas We Serve — Beltway Demolition|Serving Maryland, Washington DC, Virginia and the surrounding Mid-Atlantic."
+"contact|Contact — Beltway Demolition|Talk to us about a shuttered facility, an environmental liability or a redevelopment opportunity."
+"privacy-policy|Privacy Policy — Beltway Demolition|How this site collects, uses and protects personal information."
 )
 
 for entry in "${PAGES[@]}"; do

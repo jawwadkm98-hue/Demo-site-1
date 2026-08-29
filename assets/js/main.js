@@ -1,4 +1,4 @@
-/* Meridian Industrial Group — site behaviour.
+/* Beltway Demolition — site behaviour.
    Plain ES2019, no dependencies. Every enhancement is optional: the site is
    fully readable and navigable with JavaScript disabled. */
 (function () {
