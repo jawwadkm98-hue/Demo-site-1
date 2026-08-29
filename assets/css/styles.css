@@ -177,7 +177,7 @@ p:last-child { margin-bottom: 0; }
   height: 84px;
 }
 .brand { display: flex; align-items: center; gap: 0.8rem; flex: none; }
-.brand__mark { width: 38px; height: 38px; flex: none; }
+.brand__mark { width: 42px; height: 42px; flex: none; }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
 .brand__name {
   font-family: var(--font-display);

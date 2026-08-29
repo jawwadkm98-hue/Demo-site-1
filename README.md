@@ -82,6 +82,29 @@ Then update, in order:
    addresses and the office address.
 5. Rebuild with `./tools/build-pages.sh`.
 
+## Logo
+
+The mark is a heavy ring with a segment broken out of the upper right, the
+piece kicked clear of the gap it left: the Beltway is a ring road, and
+demolition takes a piece out of things. No letterforms, which is what lets it
+survive at favicon size.
+
+`tools/make-logo.py` generates the whole kit from computed geometry — change
+`R`, `W` or the gap angles at the top of that file and every variant stays
+concentric:
+
+| File | Use |
+| --- | --- |
+| `logo-mark.svg` | Inline use; the broken piece inherits `currentColor` |
+| `logo-mark-dark.svg` | On dark grounds (amber ring, white piece) |
+| `logo-mark-light.svg` | On light grounds (amber ring, ink piece) |
+| `logo-mark-mono.svg` | One colour — vinyl, embroidery, stamps, single-plate print |
+| `logo-lockup-dark.svg` / `-light.svg` / `-mono.svg` | Mark plus wordmark, for letterhead, signage and email |
+| `favicon.svg` | Browser tab; carries its own dark ground |
+
+The header and footer inline the mark rather than linking it, so the broken
+piece picks up the surrounding text colour.
+
 ## Accuracy
 
 **Everything on this site is either true or deliberately left blank.** The only

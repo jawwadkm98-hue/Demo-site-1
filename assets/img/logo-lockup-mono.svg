@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" role="img" aria-label="Beltway Demolition">
+  <g transform="translate(4 8)">
+    <path d="M49.39 27.34A18.0 18.0 0 1 1 36.66 14.61" fill="none" stroke="currentColor" stroke-width="9.0"
+          stroke-linecap="round"/>
+    <path d="M37.86 14.98A18.0 18.0 0 0 1 49.02 26.14" fill="none" stroke="currentColor" stroke-width="9.0"
+          stroke-linecap="round" transform="translate(4.60 -4.60) rotate(13.0 32.0 32.0)"/>
+  </g>
+  <g font-family="Oswald, 'Arial Narrow', Arial, sans-serif" fill="currentColor">
+    <text x="86" y="42" font-size="34" font-weight="600" letter-spacing="3.4">BELTWAY</text>
+    <text x="88" y="63" font-size="15" font-weight="400" letter-spacing="6.2"
+          fill="currentColor">DEMOLITION</text>
+  </g>
+</svg>
