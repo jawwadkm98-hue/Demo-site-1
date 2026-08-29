@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 64" role="img" aria-label="Beltway Demolition mark: a letter B with an excavator boom and bucket">
-  <path d="M14 12v44M14 56h15a11 11 0 0 0 0-22H14M14 34h13a11 11 0 0 0 0-22H14"
-        fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M14 12L44 4l20 15" fill="none" stroke="currentColor" stroke-width="8"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M64 19l3 14" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-  <path d="M70 33l6 5-6 9-9-6z" fill="currentColor"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 64" role="img" aria-label="Beltway Demolition mark: the letters B and D with an excavator boom working through the D">
+  <path d="M10 12v40M10 52h13a10 10 0 0 0 0-20H10M10 32h11a10 10 0 0 0 0-20H10"
+        fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 12v40h10a20 20 0 0 0 0-40z" fill="none" stroke="currentColor" stroke-width="8"
+        stroke-linejoin="round"/>
+  <path d="M50 46L68 20" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M67 14l10 3-3 10-10-4z" fill="currentColor"/>
 </svg>

@@ -84,10 +84,12 @@ Then update, in order:
 
 ## Logo
 
-The mark is a bold **B with an excavator boom** rising off the top of the
-stem, the stick dropping to a bucket working clear of the bowls — a vector
-adaptation of the client's chosen illustrated concept, flattened to two
-weights and plain geometry so it survives at favicon size.
+The mark is the client's chosen **BD lockup**, vectorized: a steel B, a gold
+D, and the excavator boom working through the D's counter with the bucket
+breaking out of the top right. Flattened to strokes and one clean
+intersection so it survives at favicon size, where the illustrated original
+cannot. The steel elements are drawn in `currentColor`, so the mark follows
+the text colour of whatever it sits in.
 
 `tools/make-logo.py` generates the whole kit; edit the paths there and every
 variant regenerates together:
@@ -100,8 +102,8 @@ variant regenerates together:
 | `logo-lockup-dark.svg` / `-light.svg` / `-mono.svg` | Mark plus wordmark, for letterhead, signage and email |
 | `favicon.svg` | Browser tab; carries its own dark ground |
 
-The header and footer inline the mark rather than linking it, so the boom
-picks up the surrounding text colour. The original full-detail illustration
+The header and footer inline the mark rather than linking it, so the steel
+elements pick up the surrounding text colour. The original full-detail illustration
 (skyline, debris, monument) is a marketing asset rather than a working logo —
 commit it to the repo separately for use on social cards and print once the
 file is available.

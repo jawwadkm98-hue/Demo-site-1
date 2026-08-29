@@ -177,7 +177,7 @@ p:last-child { margin-bottom: 0; }
   height: 84px;
 }
 .brand { display: flex; align-items: center; gap: 0.8rem; flex: none; }
-.brand__mark { width: 50px; height: 39px; flex: none; }
+.brand__mark { width: 52px; height: 39px; flex: none; }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
 .brand__name {
   font-family: var(--font-display);
@@ -190,7 +190,7 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.6rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--fog);
+  color: var(--amber);
   margin-top: 0.35rem;
 }
 
