@@ -84,26 +84,27 @@ Then update, in order:
 
 ## Logo
 
-The mark is a heavy ring with a segment broken out of the upper right, the
-piece kicked clear of the gap it left: the Beltway is a ring road, and
-demolition takes a piece out of things. No letterforms, which is what lets it
-survive at favicon size.
+The mark is a bold **B with an excavator boom** rising off the top of the
+stem, the stick dropping to a bucket working clear of the bowls — a vector
+adaptation of the client's chosen illustrated concept, flattened to two
+weights and plain geometry so it survives at favicon size.
 
-`tools/make-logo.py` generates the whole kit from computed geometry — change
-`R`, `W` or the gap angles at the top of that file and every variant stays
-concentric:
+`tools/make-logo.py` generates the whole kit; edit the paths there and every
+variant regenerates together:
 
 | File | Use |
 | --- | --- |
-| `logo-mark.svg` | Inline use; the broken piece inherits `currentColor` |
-| `logo-mark-dark.svg` | On dark grounds (amber ring, white piece) |
-| `logo-mark-light.svg` | On light grounds (amber ring, ink piece) |
+| `logo-mark.svg` | Inline use; boom and bucket inherit `currentColor` |
+| `logo-mark-dark.svg` / `-light.svg` | Fixed variants for dark / light grounds |
 | `logo-mark-mono.svg` | One colour — vinyl, embroidery, stamps, single-plate print |
 | `logo-lockup-dark.svg` / `-light.svg` / `-mono.svg` | Mark plus wordmark, for letterhead, signage and email |
 | `favicon.svg` | Browser tab; carries its own dark ground |
 
-The header and footer inline the mark rather than linking it, so the broken
-piece picks up the surrounding text colour.
+The header and footer inline the mark rather than linking it, so the boom
+picks up the surrounding text colour. The original full-detail illustration
+(skyline, debris, monument) is a marketing asset rather than a working logo —
+commit it to the repo separately for use on social cards and print once the
+file is available.
 
 ## Accuracy
 
