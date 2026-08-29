@@ -1,12 +1,12 @@
 # Meridian Industrial Group — marketing site
 
-A static, dependency-free marketing site for a heavy-industrial group:
-liability risk transfer, demolition, environmental remediation, asset recovery
-and industrial redevelopment.
+A static, dependency-free marketing site for a demolition and site clearance
+contractor working in Maryland, Washington DC and Virginia, backed by WMB LLC.
 
 > **The name is a placeholder.** "Meridian Industrial Group" is a stand-in until
-> the real brand is decided — see [Renaming](#renaming) below. All copy, figures,
-> addresses, phone numbers and email addresses are illustrative.
+> the real brand is decided — see [Renaming](#renaming) below. Contact details
+> and the licence number are placeholders too; see
+> [`CONTENT-TODO.md`](CONTENT-TODO.md).
 
 ## Running it
 
@@ -25,18 +25,11 @@ Netlify, Cloudflare Pages, S3 — anything that serves files).
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home — hero, group figures, accreditations, capabilities, operating companies, risk-transfer feature, process, sectors, projects, coverage |
-| `about.html` | Company story, figures, operating principles, ownership & licensing, bonding & compliance |
-| `divisions.html` | The twelve operating companies and why the group is structured that way |
-| `sectors.html` | The ten industries served and what each one demands at closure |
-| `investors.html` | FY25 results, five-year summary, revenue charts, filings and events |
-| `sustainability.html` | Safety and diversion performance, targets, community programmes |
-| `leadership.html` | Executive team, board of directors and committee structure |
-| `careers.html` | Open roles, employment figures, what the group offers |
-| `services.html` | Eight capability blocks, plus the three ways clients engage |
-| `areas-we-serve.html` | Regional coverage, region-by-region detail, mobilisation timeline |
-| `news.html` | Featured release plus a grid of project and company updates |
-| `contact.html` | Enquiry form, direct contact lines, regional offices |
+| `index.html` | Home — services, how we work, licensing and backing, service area |
+| `about.html` | Who we are, how we operate, licensing and backing |
+| `services.html` | Six services, and the clients they are for |
+| `areas-we-serve.html` | Service area by region, and what happens after you call |
+| `contact.html` | Quote request form and direct contact details |
 | `privacy-policy.html` | Placeholder privacy policy |
 
 ## Layout
@@ -89,27 +82,43 @@ Then update, in order:
    addresses and the office address.
 5. Rebuild with `./tools/build-pages.sh`.
 
+## Accuracy
+
+**Everything on this site is either true or deliberately left blank.** The only
+factual claims it makes are that the company is backed by WMB LLC, which holds
+a construction contractor licence in the State of Maryland, and that it does
+demolition and site clearance work in Maryland, Washington DC and Virginia.
+
+Figures that would normally appear on a contractor's site — years in business,
+headcount, project counts, bonding capacity, safety record, accreditations —
+are **absent rather than estimated**. Add them when you have them.
+
+**See [`CONTENT-TODO.md`](CONTENT-TODO.md)** for everything that still needs a
+real value before launch, what to double-check, and what is worth adding later.
+
 ## Notes
 
-- **Ownership and licensing.** The site states that the group is backed by
+- **Ownership and licensing.** The site states that the company is backed by
   **WMB LLC**, which holds a construction contractor licence in the State of
-  Maryland. The licence number is a deliberate placeholder — `MD licence
-  #000000` — and appears in `partials/footer.html` and `pages/contact.html`.
-  **Replace it with the real number before the site goes live**, and check the
-  wording against how the licence is actually held.
-- **Every figure is illustrative.** Revenue, headcount, office and fleet counts,
-  EMR, bonding capacity, accreditations and all twelve company names are
-  placeholder content sized to read as a large group. Swap them for real
-  numbers, or remove any you cannot substantiate — published capability claims
-  are the kind of thing clients and prequalification bodies check.
+  Maryland. The licence number is a deliberate placeholder — `#000000` — in
+  `partials/footer.html` and `pages/about.html`. **Replace it with the real
+  number before launch**, and check the wording against how the licence is
+  actually held.
+- **No invented figures.** Headcount, years in business, project counts,
+  bonding and accreditations are absent rather than estimated, because
+  published capability claims are exactly what clients, prequalification
+  bodies and licensing boards check. `CONTENT-TODO.md` lists what to add once
+  you can substantiate it.
 - **The contact form has no backend.** It validates in the browser and shows a
   confirmation, but sends nothing. Point it at a form service (Formspree, Basin,
   a Lambda, …) in the `data-contact-form` handler at the bottom of
   `assets/js/main.js`.
-- **Artwork is all inline SVG** — industrial silhouettes, plant elevations, site
-  plans and an abstract coverage map. Nothing is loaded from a CDN, so the site
-  works offline and has no licensing questions. Swap in photography by replacing
-  the `<img>` sources in `pages/`.
+- **Artwork is all inline SVG** — an industrial silhouette, a building
+  elevation, a site plan and a stylised map of the Maryland / DC / Virginia
+  service area. Nothing loads from a CDN, so the site works offline and raises
+  no image-licensing questions. The map is deliberately schematic, not a survey
+  drawing. Swap in real project photography by replacing the `<img>` sources in
+  `pages/`.
 - **Fonts** are Oswald and Inter from Google Fonts, with full system fallbacks —
   the site degrades cleanly if they are blocked or unavailable.
 - **Accessibility**: skip link, landmark regions, `aria-current` on the active

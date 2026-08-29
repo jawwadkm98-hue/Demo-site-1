@@ -23,10 +23,6 @@
     var closeNav = function () {
       nav.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
-      document.querySelectorAll('[data-mega].is-open').forEach(function (item) {
-        item.classList.remove('is-open');
-        item.querySelector('.nav__trigger').setAttribute('aria-expanded', 'false');
-      });
     };
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
@@ -39,68 +35,10 @@
       if (e.key === 'Escape') closeNav();
     });
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 1180) closeNav();
+      if (window.innerWidth > 1000) closeNav();
     });
   }
 
-
-  /* --------------------------------------------------------- mega menu --- */
-  /* Hover opens on pointer devices; click and keyboard work everywhere, so
-     the panels are reachable without a mouse and inside the mobile drawer. */
-  var megaItems = Array.prototype.slice.call(document.querySelectorAll('[data-mega]'));
-  if (megaItems.length) {
-    var hoverable = window.matchMedia('(hover: hover) and (min-width: 1181px)');
-
-    var closeMega = function (except) {
-      megaItems.forEach(function (item) {
-        if (item === except) return;
-        item.classList.remove('is-open');
-        item.querySelector('.nav__trigger').setAttribute('aria-expanded', 'false');
-      });
-    };
-
-    megaItems.forEach(function (item) {
-      var trigger = item.querySelector('.nav__trigger');
-
-      trigger.addEventListener('click', function () {
-        // On a hover device the pointer has already opened this panel on its
-        // way to the click, so toggling here would close it again. Clicking
-        // (or pressing Enter) opens; Escape and pointer-leave close.
-        var open = hoverable.matches ? true : !item.classList.contains('is-open');
-        closeMega(open ? item : null);
-        item.classList.toggle('is-open', open);
-        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-
-      item.addEventListener('mouseenter', function () {
-        if (!hoverable.matches) return;
-        closeMega(item);
-        item.classList.add('is-open');
-        trigger.setAttribute('aria-expanded', 'true');
-      });
-      item.addEventListener('mouseleave', function () {
-        if (!hoverable.matches) return;
-        item.classList.remove('is-open');
-        trigger.setAttribute('aria-expanded', 'false');
-      });
-
-      // Tabbing out of the panel closes it.
-      item.addEventListener('focusout', function (e) {
-        if (!hoverable.matches) return;
-        if (!item.contains(e.relatedTarget)) {
-          item.classList.remove('is-open');
-          trigger.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeMega(null);
-    });
-    document.addEventListener('click', function (e) {
-      if (!e.target.closest('[data-mega]')) closeMega(null);
-    });
-  }
 
   /* ------------------------------------------------ reveal on scroll --- */
   var revealables = document.querySelectorAll('[data-reveal]');
