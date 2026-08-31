@@ -84,29 +84,26 @@ Then update, in order:
 
 ## Logo
 
-The mark is the client's chosen **BD lockup**, vectorized: a steel B, a gold
-D, and the excavator boom working through the D's counter with the bucket
-breaking out of the top right. Flattened to strokes and one clean
-intersection so it survives at favicon size, where the illustrated original
-cannot. The steel elements are drawn in `currentColor`, so the mark follows
-the text colour of whatever it sits in.
-
-`tools/make-logo.py` generates the whole kit; edit the paths there and every
-variant regenerates together:
+The site uses the client's own illustrated logo, committed at
+`assets/brand/beltway-demolition-logo.png` (1536×1024 RGBA with a genuine
+transparent background). Derived copies, regenerated from it via canvas in
+`tools/`-style processing:
 
 | File | Use |
 | --- | --- |
-| `logo-mark.svg` | Inline use; boom and bucket inherit `currentColor` |
-| `logo-mark-dark.svg` / `-light.svg` | Fixed variants for dark / light grounds |
-| `logo-mark-mono.svg` | One colour — vinyl, embroidery, stamps, single-plate print |
-| `logo-lockup-dark.svg` / `-light.svg` / `-mono.svg` | Mark plus wordmark, for letterhead, signage and email |
-| `favicon.svg` | Browser tab; carries its own dark ground |
+| `assets/brand/logo-emblem.png` | The BD emblem cropped from the artwork, full resolution |
+| `assets/brand/logo-emblem-sm.png` | 210px emblem used in the header and footer |
+| `assets/brand/logo-900.png` | Display copy of the full lockup for in-page or print use |
+| `assets/brand/social-card.png` | 1200×630 link-preview image, wired as `og:image` |
 
-The header and footer inline the mark rather than linking it, so the steel
-elements pick up the surrounding text colour. The original full-detail illustration
-(skyline, debris, monument) is a marketing asset rather than a working logo —
-commit it to the repo separately for use on social cards and print once the
-file is available.
+`tools/make-logo.py` still generates the **simplified vector kit**
+(`assets/img/logo-*.svg`, `favicon.svg`) — a flat steel-B / gold-D / boom mark
+derived from the same artwork. It exists for the jobs a detailed raster
+cannot do: the 16px browser tab, one-colour print, vinyl and embroidery. The
+favicon deliberately stays on the simplified mark.
+
+Note: `og:image` uses a relative path, which works only once the site has a
+real domain — set an absolute URL there at launch.
 
 ## Accuracy
 
