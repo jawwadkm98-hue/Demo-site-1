@@ -32,7 +32,8 @@ aspect ratio loses edges rather than distorting.
 
 | File | Ratio | Used on | Shoot |
 | --- | --- | --- | --- |
-| `hero.svg` | 2400×1250 | Home hero, full-bleed behind the headline | A machine working a structure, dust in the air. Needs quiet space on the left third — the headline sits there. |
+| `hero.svg` | 2400×1250 | Home hero on tablet and desktop | A machine working a structure, dust in the air. Needs quiet space on the left third — the headline sits there. |
+| `hero-portrait.svg` | 900×1300 | Home hero at 760px and below | The same job shot **portrait**. A landscape photo loses about 78% of its width to the crop in a phone-shaped frame, so shoot or crop a tall version rather than reusing the wide one. |
 | `commercial.svg` | 4:3 | Home "Before" feature, Contact page head | A commercial or industrial building before or during demolition. |
 | `cleared-lot.svg` | 4:3 | About "After" feature | A finished job: cleared, graded, stakes set, nothing left to trip over. |
 | `teardown.svg` | 16:10 | Services page head | A house, garage or small commercial structure coming down. |

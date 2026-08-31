@@ -173,6 +173,26 @@ def scene(w, h, seed, build, horizon=0.76, label=''):
 
 
 # --------------------------------------------------------------- scenes ----
+def commercial_teardown_tall(w, h, hz):
+    """The same job, composed for a tall frame: fewer, larger structures and
+    the machine centred, so nothing important sits outside a phone's crop."""
+    return ''.join([
+        f'<g filter="url(#soft)" opacity="0.7">',
+        block(w*0.02, hz, w*0.30, h*0.20, FAR),
+        block(w*0.72, hz, w*0.30, h*0.17, FAR),
+        '</g>',
+        haze(hz - h*0.16, h*0.18, w, 0.22),
+        broken_block(w*0.30, hz, w*0.48, h*0.30, MID),
+        block(w*0.02, hz, w*0.24, h*0.22, MID, floors=5),
+        haze(hz - h*0.07, h*0.10, w, 0.16),
+        plume(w*0.62, hz, w*0.34, h*0.20),
+        excavator(w*0.34, hz, min(w, h) / 520.0),
+        rolloff(w*0.74, hz, w*0.24, h*0.06, NEAR, ACCENT),
+        rubble(hz, w, FORE, 7),
+        hoarding(hz + h*0.09, w),
+    ])
+
+
 def commercial_teardown(w, h, hz):
     """Mid-rise commercial building part way down, machine working the face."""
     return ''.join([
@@ -252,7 +272,8 @@ def plant_on_site(w, h, hz):
 
 
 SCENES = [
-    ('hero.svg',         2400, 1250, 3,  commercial_teardown, 0.74),
+    ('hero.svg',         2400, 1250, 3,  commercial_teardown,      0.74),
+    ('hero-portrait.svg', 900, 1300, 3,  commercial_teardown_tall, 0.70),
     ('teardown.svg',     1600, 1000, 9,  small_structure,     0.76),
     ('commercial.svg',   1600, 1200, 5,  commercial_teardown, 0.74),
     ('cleared-lot.svg',  1600, 1200, 13, cleared_lot,         0.72),

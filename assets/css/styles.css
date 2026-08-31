@@ -650,8 +650,12 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 1000px) {
   .nav-toggle { display: grid; }
   .nav {
-    position: fixed;
-    inset: 84px 0 auto;
+    /* Anchored to the masthead rather than a fixed offset: the strip above
+       the nav collapses on scroll, so a hardcoded top drifts. */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -663,7 +667,7 @@ p:last-child { margin-bottom: 0; }
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--t), transform var(--t);
-    max-height: calc(100vh - 84px);
+    max-height: calc(100dvh - var(--masthead-h, 124px));
     overflow-y: auto;
   }
   .nav.is-open { opacity: 1; transform: none; pointer-events: auto; }
@@ -684,7 +688,6 @@ p:last-child { margin-bottom: 0; }
   .form-row { grid-template-columns: 1fr; }
   .region { grid-template-columns: 1fr; gap: 0.6rem; }
   .stat { border-bottom: 1px solid var(--line); }
-  .brand__sub { display: none; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 
@@ -808,9 +811,13 @@ p:last-child { margin-bottom: 0; }
   .footer-grid--wide { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 760px) {
-  .utility__inner { justify-content: center; }
-  .utility__facts { display: none; }
+  .hero__photo img { object-position: 50% 62%; }
+  .utility__inner { flex-direction: column; gap: 0.3rem; padding-block: 0.5rem; }
+  .utility__facts { display: flex; }
+  .utility__facts li:first-child { display: none; }      /* service area is in the hero copy */
+  .utility__facts li:nth-child(2) { display: flex; }      /* backed by WMB LLC, MD licensed */
   .utility__links li:not(:last-child) { display: none; }
+  .utility__facts, .utility__links { font-size: 0.72rem; }
   .footer-grid--wide { grid-template-columns: 1fr 1fr; }
   .role { grid-template-columns: 1fr; }
 }
@@ -862,6 +869,7 @@ p:last-child { margin-bottom: 0; }
 /* Hero photograph sits behind the headline, under a scrim that keeps the
    type legible whatever the image. */
 .hero__photo { position: absolute; inset: 0; z-index: -2; }
+.hero__photo picture { display: block; width: 100%; height: 100%; }
 .hero__photo img {
   width: 100%;
   height: 100%;

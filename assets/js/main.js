@@ -9,11 +9,17 @@
   /* ---------------------------------------------------- sticky header --- */
   var header = document.querySelector('.site-header');
   if (header) {
+    var publishHeight = function () {
+      document.documentElement.style.setProperty(
+        '--masthead-h', header.offsetHeight + 'px');
+    };
     var setStuck = function () {
       header.classList.toggle('is-stuck', window.scrollY > 24);
+      publishHeight();
     };
     setStuck();
     window.addEventListener('scroll', setStuck, { passive: true });
+    window.addEventListener('resize', publishHeight);
   }
 
   /* ------------------------------------------------------- mobile nav --- */
