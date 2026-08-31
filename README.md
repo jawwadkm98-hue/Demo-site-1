@@ -8,6 +8,32 @@ contractor working in Maryland, Washington DC and Virginia, backed by WMB LLC.
 > and the licence number are placeholders too; see
 > [`CONTENT-TODO.md`](CONTENT-TODO.md).
 
+## Deploying to Firebase Hosting
+
+`firebase.json` is committed and configured for this repo's layout — the site
+lives at the repo root, so the config publishes the root while excluding the
+sources (`pages/`, `partials/`, `tools/`), the markdown, and the large brand
+originals. The published payload is 26 files, about 815 KB.
+
+```bash
+npm install -g firebase-tools
+firebase login
+firebase use --add          # pick your Firebase project, name the alias "default"
+firebase deploy --only hosting
+```
+
+Do **not** run `firebase init hosting` — it will overwrite `firebase.json` and
+ask for a public directory this project does not have. `firebase use --add`
+writes the `.firebaserc` that names your project, which is the only piece
+missing.
+
+Notes:
+- `cleanUrls` is off deliberately: internal links are written as `about.html`
+  so the site also works when opened from the filesystem. Turning clean URLs on
+  would make every internal link redirect.
+- Assets are served with a one-year immutable cache; HTML revalidates every
+  time, so content changes go live immediately on deploy.
+
 ## Running it
 
 There is no build toolchain and no dependencies. Open `index.html` in a browser,
