@@ -6,26 +6,24 @@ invented. This file lists what still needs a real value, and where it lives.
 Edit the sources under `partials/` and `pages/` — never the built HTML at the
 repo root — then run `./tools/build-pages.sh`.
 
-## Must fix — these are placeholders that look real
+## Live details — set
 
-| What | Placeholder now | Where |
-| --- | --- | --- |
-| Company name | "Beltway Demolition" | everywhere — see **Renaming** in README.md |
-| ~~Live domain~~ | ~~set~~ | **done** — `SITE_URL` in `tools/build-pages.sh` is `https://beltwaydemo.com` |
-| Maryland licence number | `#000000` | `partials/footer.html`, `pages/about.html` |
-| Phone | `+1 (555) 010-4400` | `partials/header.html`, `partials/footer.html`, `pages/index.html`, `pages/contact.html` |
-| Email | `hello@example.com` | `partials/footer.html`, `pages/contact.html` |
-| Privacy contact | `privacy@example.com` | `pages/privacy-policy.html` |
+| What | Value |
+| --- | --- |
+| Domain | `https://beltwaydemo.com` (`SITE_URL` in `tools/build-pages.sh`) |
+| Phone | `+1 (703) 861-5354` |
+| Email | `info@beltwaydemo.com` — also used for privacy enquiries |
+| Maryland licence number | **Not published**, by request. The site states the WMB LLC backing and offers licence documentation on request. |
 
-`555-01xx` numbers and `example.com` addresses are reserved for fiction, so
-they are safe to ship by accident — but they are useless to a customer.
+Make sure `info@beltwaydemo.com` actually receives mail — the site sends every
+enquiry there, and the contact form's mail wiring is still outstanding (below).
 
 ## Check before publishing — claims a client could verify
 
 - **Licence wording.** The site says the company "is backed by WMB LLC, which
-  holds a construction contractor licence in the State of Maryland." Confirm
-  that describes the arrangement correctly, and name the issuing body if the
-  licence type should be stated (MHIC, or a county/trade licence).
+  holds a construction contractor licence in the State of Maryland", and that
+  licence documentation is available on request. No licence number is
+  published. Confirm that wording describes the arrangement correctly.
 - **Insurance.** The site says certificates are issued before mobilisation and
   available on request. Make sure that is operationally true.
 - **Services.** Six are listed in `pages/services.html`. **Delete any the
