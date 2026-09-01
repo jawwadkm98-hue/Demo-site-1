@@ -11,6 +11,7 @@ repo root — then run `./tools/build-pages.sh`.
 | What | Placeholder now | Where |
 | --- | --- | --- |
 | Company name | "Beltway Demolition" | everywhere — see **Renaming** in README.md |
+| ~~Live domain~~ | ~~set~~ | **done** — `SITE_URL` in `tools/build-pages.sh` is `https://beltwaydemo.com` |
 | Maryland licence number | `#000000` | `partials/footer.html`, `pages/about.html` |
 | Phone | `+1 (555) 010-4400` | `partials/header.html`, `partials/footer.html`, `pages/index.html`, `pages/contact.html` |
 | Email | `hello@example.com` | `partials/footer.html`, `pages/contact.html` |

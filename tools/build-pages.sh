@@ -18,7 +18,7 @@ cd "$(dirname "$0")/.."
 # The live origin, no trailing slash. Canonical URLs, og:url, the social-card
 # URL, robots.txt and sitemap.xml are all derived from this — set it once when
 # the domain is live and rebuild.
-SITE_URL="${SITE_URL:-https://example.com}"
+SITE_URL="${SITE_URL:-https://beltwaydemo.com}"
 # ---------------------------------------------------------------------------
 
 # Literal search-and-replace. Deliberately avoids sed and ${var//p/r}: both
