@@ -127,26 +127,32 @@ Then update, in order:
 
 ## Logo
 
-The site uses the client's own illustrated logo, committed at
-`assets/brand/beltway-demolition-logo.png` (1536×1024 RGBA with a genuine
-transparent background). Derived copies, regenerated from it via canvas in
-`tools/`-style processing:
+The master artwork is the client's own illustration, committed at
+`assets/brand/logo-v2-full.png` (1536×1024 RGBA, genuinely transparent):
+excavator and wrecking ball inside a gold arc, over a DC skyline, above the
+BELTWAY DEMOLITION wordmark. Everything else is derived from it.
+
+`python3 tools/make-brand.py` regenerates the raster set:
 
 | File | Use |
 | --- | --- |
-| `assets/brand/logo-emblem.png` | The BD emblem cropped from the artwork, full resolution |
-| `assets/brand/logo-emblem-sm.png` | 210px emblem used in the header and footer |
-| `assets/brand/logo-900.png` | Display copy of the full lockup for in-page or print use |
+| `assets/brand/logo-emblem-v2.png` | 198×88 (2×) crop of the arc and machine, shown at 117×52 in the header and footer |
 | `assets/brand/social-card.png` | 1200×630 link-preview image, wired as `og:image` |
 
-`tools/make-logo.py` still generates the **simplified vector kit**
-(`assets/img/logo-*.svg`, `favicon.svg`) — a flat steel-B / gold-D / boom mark
-derived from the same artwork. It exists for the jobs a detailed raster
-cannot do: the 16px browser tab, one-colour print, vinyl and embroidery. The
-favicon deliberately stays on the simplified mark.
+The header pairs that emblem with the wordmark set in live HTML rather than
+using the artwork's own wordmark: baked into a 52px-tall image the lettering
+is unreadable, and live text stays sharp, selectable and translatable.
 
-Note: `og:image` uses a relative path, which works only once the site has a
-real domain — set an absolute URL there at launch.
+`python3 tools/make-logo.py` generates the **icon kit** (`assets/img/`):
+`favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `icon-512.png` and
+the one-colour `logo-mark-*.svg` variants for print, vinyl and embroidery.
+These are not the illustration — at 16px the scene turns to noise — but a
+reduction of its two most distinctive shapes, the gold arc and the wrecking
+ball, at a weight that survives a browser tab. Edit the geometry in one place
+(`mark()` and `raster()` share the same 64-unit grid) and re-run.
+
+`assets/brand/logo-v2-full.png` is listed in `firebase.json`'s `ignore` array:
+it is the source of truth in the repo, not something to ship to visitors.
 
 ## Accuracy
 

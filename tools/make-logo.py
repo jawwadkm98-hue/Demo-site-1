@@ -1,68 +1,79 @@
-"""Generate the Beltway Demolition logo kit.
+"""Generate the Beltway Demolition favicon and simplified marks.
 
-The mark is a vector adaptation of the client's chosen BD lockup: a steel B,
-a gold D, and the excavator boom working through the D's counter with the
-bucket breaking out of the top right. Flattened to strokes and one clean
-intersection so it survives at favicon size, where the illustrated original
-cannot. The steel elements are drawn in currentColor so the mark follows the
-text colour of whatever it sits in.
+The full logo (assets/brand/logo-v2-full.png) is an illustration: excavator,
+skyline, rubble and a wordmark. It carries the brand everywhere it has room —
+the header, the social card, print. It cannot be a favicon: at 16px the scene
+turns to noise, as the crops in review showed.
+
+So the tab icon is drawn from the logo's two most distinctive simple shapes,
+the gold arc and the wrecking ball, at a weight that survives 16px. The same
+geometry is rasterised into the PNG sizes SVG icons don't cover (iOS home
+screen, older Android, some feed readers).
 
 Run: python3 tools/make-logo.py
 """
 import os
 
+from PIL import Image, ImageDraw
+
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets', 'img')
-AMBER, INK, WHITE, MUTED = '#f0a11a', '#0a0c0e', '#ffffff', '#98a4b0'
-LABEL = 'Beltway Demolition mark: the letters B and D with an excavator boom working through the D'
-VB_W, VB_H = 86, 64
+GOLD, STEEL, INK = '#f0a11a', '#d8dde2', '#0a0c0e'
+LABEL = 'Beltway Demolition: a wrecking ball swinging beneath the brand arc'
 
 
-def mark(steel, gold, indent='  '):
-    """steel = the B, boom and bucket; gold = the D."""
-    return f'''{indent}<path d="M10 12v40M10 52h13a10 10 0 0 0 0-20H10M10 32h11a10 10 0 0 0 0-20H10"
-{indent}      fill="none" stroke="{steel}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-{indent}<path d="M44 12v40h10a20 20 0 0 0 0-40z" fill="none" stroke="{gold}" stroke-width="8"
-{indent}      stroke-linejoin="round"/>
-{indent}<path d="M50 46L68 20" fill="none" stroke="{steel}" stroke-width="6.5" stroke-linecap="round"/>
-{indent}<path d="M67 14l10 3-3 10-10-4z" fill="{steel}"/>'''
+def mark(arc_colour, ball_colour):
+    return f'''  <path d="M8 42A26 26 0 0 1 56 26" fill="none" stroke="{arc_colour}"
+        stroke-width="8" stroke-linecap="round"/>
+  <path d="M45 29v9" stroke="{ball_colour}" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="45" cy="48" r="11" fill="{ball_colour}"/>'''
 
 
-def svg(body, vb=f'0 0 {VB_W} {VB_H}', label=None, extra=''):
+def svg(body, label=None, extra=''):
     a = f' role="img" aria-label="{label}"' if label else ''
-    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}"{a}>\n{extra}{body}\n</svg>\n'
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"{a}>\n'
+            f'{extra}{body}\n</svg>\n')
 
 
-def lockup(word_colour, sub_colour, steel_colour):
-    gold = AMBER if steel_colour != 'currentColor' else 'currentColor'
-    return (f'  <g transform="translate(2 8)">\n{mark(steel_colour, gold, indent="    ")}\n  </g>\n'
-            f'  <g font-family="Oswald, \'Arial Narrow\', Arial, sans-serif" fill="{word_colour}">\n'
-            f'    <text x="104" y="42" font-size="34" font-weight="600" letter-spacing="3.4">BELTWAY</text>\n'
-            f'    <text x="106" y="63" font-size="15" font-weight="400" letter-spacing="6.2"\n'
-            f'          fill="{sub_colour}">DEMOLITION</text>\n'
-            f'  </g>')
+RASTER = [(32, 'favicon-32.png'), (180, 'apple-touch-icon.png'), (512, 'icon-512.png')]
+SS = 8  # supersample factor, so the arc and ball edges come down clean
 
 
-# Favicon: centre the wide mark in a 64x64 tile with its own ground.
-_FAV_T = 'transform="translate(1 9) scale(0.72)"'
+def rgb(h):
+    return tuple(int(h[i:i + 2], 16) for i in (1, 3, 5)) + (255,)
+
+
+def raster(size):
+    """The same 64-unit geometry as mark(), drawn with pixels."""
+    n = size * SS
+    im = Image.new("RGBA", (n, n), (0, 0, 0, 0))
+    d, u = ImageDraw.Draw(im), n / 64.0
+    d.rounded_rectangle([0, 0, n - 1, n - 1], radius=n * 10 / 64, fill=rgb(INK))
+    d.arc([4 * u, 6 * u, 60 * u, 62 * u], start=203, end=310, fill=rgb(GOLD), width=int(8 * u))
+    d.line([(45 * u, 29 * u), (45 * u, 38 * u)], fill=rgb(STEEL), width=int(4 * u))
+    d.ellipse([34 * u, 37 * u, 56 * u, 59 * u], fill=rgb(STEEL))
+    return im.resize((size, size), Image.LANCZOS)
+
 
 FILES = {
-    'favicon.svg': (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">\n'
-                    f'  <rect width="64" height="64" rx="8" fill="{INK}"/>\n'
-                    f'  <g {_FAV_T}>\n{mark(AMBER, WHITE, indent="    ")}\n  </g>\n</svg>\n'),
-    # Inline use: boom + bucket inherit the surrounding text colour.
-    'logo-mark.svg':        svg(mark(AMBER, 'currentColor'), label=LABEL),
-    'logo-mark-dark.svg':   svg(mark(AMBER, WHITE), label=LABEL),
-    'logo-mark-light.svg':  svg(mark(AMBER, INK), label=LABEL),
-    # One colour, for vinyl, embroidery, stamps and single-plate print.
-    'logo-mark-mono.svg':   svg(mark('currentColor', 'currentColor'), label=LABEL),
-    'logo-lockup-dark.svg':  svg(lockup(WHITE, AMBER, WHITE), '0 0 448 80', 'Beltway Demolition'),
-    'logo-lockup-light.svg': svg(lockup(INK, '#cf860c', INK), '0 0 448 80', 'Beltway Demolition'),
-    'logo-lockup-mono.svg':  svg(lockup('currentColor', 'currentColor', 'currentColor'),
-                                 '0 0 448 80', 'Beltway Demolition'),
+    # Favicon carries its own ground so it reads on light and dark tab bars.
+    'favicon.svg':          svg(mark(GOLD, STEEL),
+                                extra=f'  <rect width="64" height="64" rx="10" fill="{INK}"/>\n'),
+    'logo-mark.svg':        svg(mark(GOLD, 'currentColor'), LABEL),
+    'logo-mark-dark.svg':   svg(mark(GOLD, STEEL), LABEL),
+    'logo-mark-light.svg':  svg(mark(GOLD, INK), LABEL),
+    'logo-mark-mono.svg':   svg(mark('currentColor', 'currentColor'), LABEL),
 }
 
 if __name__ == '__main__':
     os.makedirs(OUT, exist_ok=True)
+    # The old vector lockups belonged to the retired BD monogram.
+    for stale in ('logo-lockup-dark.svg', 'logo-lockup-light.svg', 'logo-lockup-mono.svg'):
+        pth = os.path.join(OUT, stale)
+        if os.path.exists(pth):
+            os.remove(pth); print('  removed', stale)
     for name, body in FILES.items():
         open(os.path.join(OUT, name), 'w').write(body)
         print(' ', name)
+    for size, name in RASTER:
+        raster(size).save(os.path.join(OUT, name), optimize=True)
+        print(f'  {name}  {size}x{size}')

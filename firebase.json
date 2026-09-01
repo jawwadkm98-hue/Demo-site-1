@@ -9,9 +9,7 @@
       "pages/**",
       "partials/**",
       "tools/**",
-      "assets/brand/beltway-demolition-logo.png",
-      "assets/brand/logo-emblem.png",
-      "assets/brand/logo-900.png",
+      "assets/brand/logo-v2-full.png",
       "*.md"
     ],
     "cleanUrls": false,
