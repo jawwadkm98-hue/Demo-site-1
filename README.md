@@ -119,7 +119,7 @@ Then update, in order:
 
 1. `partials/header.html` and `partials/footer.html` — the `MI` monogram in the
    inline logo SVG, and `.brand__name` / `.brand__sub`.
-2. `assets/img/favicon.svg` — same monogram.
+2. `assets/img/favicon.ico` and the `favicon-*.png` set — the circular badge.
 3. `tools/build-pages.sh` — the page titles and descriptions.
 4. `partials/footer.html` and `pages/contact.html` — phone numbers, email
    addresses and the office address.
@@ -143,13 +143,23 @@ The header pairs that emblem with the wordmark set in live HTML rather than
 using the artwork's own wordmark: baked into a 52px-tall image the lettering
 is unreadable, and live text stays sharp, selectable and translatable.
 
-`python3 tools/make-logo.py` generates the **icon kit** (`assets/img/`):
-`favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `icon-512.png` and
-the one-colour `logo-mark-*.svg` variants for print, vinyl and embroidery.
-These are not the illustration — at 16px the scene turns to noise — but a
-reduction of its two most distinctive shapes, the gold arc and the wrecking
-ball, at a weight that survives a browser tab. Edit the geometry in one place
-(`mark()` and `raster()` share the same 64-unit grid) and re-run.
+`python3 tools/make-logo.py` generates the **icon kit** (`assets/img/`) from a
+second piece of client artwork, `assets/brand/favicon-source.png` — the same
+scene inside a gold ring. The circle is what makes it work as an icon: at
+16px the scene inside is unreadable, but the ringed silhouette still reads,
+which is all a tab strip needs.
+
+| File | Use |
+| --- | --- |
+| `favicon.ico` | 16/32/48 multi-size, the `sizes="any"` fallback |
+| `favicon-16/32/48.png` | Modern browsers, picked per display density |
+| `apple-touch-icon.png` | 180px iOS home screen, flattened onto ink (iOS draws nothing behind transparency) |
+| `icon-192.png`, `icon-512.png` | Android home screen via `site.webmanifest`, quantised to 256 colours |
+| `logo-mark-*.svg` | One-colour arc-and-ball reduction for print, vinyl and embroidery |
+
+The SVG marks are the one thing not derived from the artwork: they are a
+deliberate reduction to two shapes for the jobs no raster can do. Their
+geometry lives in `mark()` on a 64-unit grid.
 
 `assets/brand/logo-v2-full.png` is listed in `firebase.json`'s `ignore` array:
 it is the source of truth in the repo, not something to ship to visitors.

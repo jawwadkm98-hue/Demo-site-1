@@ -10,13 +10,14 @@
       "partials/**",
       "tools/**",
       "assets/brand/logo-v2-full.png",
+      "assets/brand/favicon-source.png",
       "*.md"
     ],
     "cleanUrls": false,
     "trailingSlash": false,
     "headers": [
       {
-        "source": "**/*.@(css|js|svg|png|jpg|jpeg|webp|woff2)",
+        "source": "**/*.@(css|js|svg|png|ico|jpg|jpeg|webp|woff2)",
         "headers": [
           {
             "key": "Cache-Control",

@@ -3,7 +3,7 @@
 
 Input:  assets/brand/logo-v2-full.png  (1536x1024, transparent background)
 Output: assets/brand/logo-emblem-v2.png  header/footer mark (2x, transparent)
-        assets/brand/social-card.png     1200x630 link-preview card
+        assets/brand/social-card.jpg     1200x630 link-preview card
 """
 import os
 from PIL import Image, ImageDraw
@@ -52,5 +52,9 @@ for y in range(630):                     # subtle top-down lift
 art = fit(full, 1040, 500)
 card.alpha_composite(art, (80, 65))
 draw.rectangle([(0, 624), (1200, 630)], fill=(240, 161, 26, 255))
-card.convert('RGB').save(os.path.join(BRAND, 'social-card.png'), quality=92, optimize=True)
-print('social-card.png     1200x630')
+# JPEG, not PNG: the card is a photographic-looking illustration on a gradient,
+# which PNG stores at roughly four times the size for no visible gain, and it
+# ships on every link preview.
+card.convert('RGB').save(os.path.join(BRAND, 'social-card.jpg'),
+                         quality=88, optimize=True, progressive=True)
+print('social-card.jpg     1200x630')
