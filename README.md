@@ -3,10 +3,10 @@
 A static, dependency-free marketing site for a demolition and site clearance
 contractor working in Maryland, Washington DC and Virginia, backed by WMB LLC.
 
-> **The name is a placeholder.** "Beltway Demolition" is a stand-in until
-> the real brand is decided — see [Renaming](#renaming) below. Contact details
-> and the licence number are placeholders too; see
-> [`CONTENT-TODO.md`](CONTENT-TODO.md).
+> The name, domain, phone number and email address are the real ones. What is
+> still outstanding is listed in [`CONTENT-TODO.md`](CONTENT-TODO.md) — chiefly
+> that **the contact form has no backend**, so quote requests submitted through
+> it are lost.
 
 ## Deploying to Firebase Hosting
 
@@ -182,10 +182,8 @@ real value before launch, what to double-check, and what is worth adding later.
 
 - **Ownership and licensing.** The site states that the company is backed by
   **WMB LLC**, which holds a construction contractor licence in the State of
-  Maryland. The licence number is a deliberate placeholder — `#000000` — in
-  `partials/footer.html` and `pages/about.html`. **Replace it with the real
-  number before launch**, and check the wording against how the licence is
-  actually held.
+  Maryland. No licence number is published, by the owner's decision; the site
+  says documentation is available on request instead.
 - **No invented figures.** Headcount, years in business, project counts,
   bonding and accreditations are absent rather than estimated, because
   published capability claims are exactly what clients, prequalification
@@ -195,12 +193,18 @@ real value before launch, what to double-check, and what is worth adding later.
   confirmation, but sends nothing. Point it at a form service (Formspree, Basin,
   a Lambda, …) in the `data-contact-form` handler at the bottom of
   `assets/js/main.js`.
-- **Artwork is all inline SVG** — an industrial silhouette, a building
-  elevation, a site plan and a stylised map of the Maryland / DC / Virginia
-  service area. Nothing loads from a CDN, so the site works offline and raises
-  no image-licensing questions. The map is deliberately schematic, not a survey
-  drawing. Swap in real project photography by replacing the `<img>` sources in
-  `pages/`.
+- **Photography is the client's own**, cropped into the layout's slots by
+  `tools/prepare-photos.py`; see
+  [`assets/img/photos/README.md`](assets/img/photos/README.md). The images are
+  AI-generated renderings rather than photographs of completed jobs, which is
+  worth knowing before they are described as a portfolio anywhere. Nothing
+  loads from a CDN, so the site works offline.
+- **The service-area map is artwork, not a survey.** It shows Maryland, DC and
+  Virginia picked out in gold. The Virginia outline is stylised rather than
+  accurate — it does not extend to the state's southern and southwestern
+  edges — so it should be read as an illustration of roughly where the company
+  works, and never cited as the boundary of a service area in a contract or a
+  bid.
 - **Fonts** are Oswald and Inter from Google Fonts, with full system fallbacks —
   the site degrades cleanly if they are blocked or unavailable.
 - **Accessibility**: skip link, landmark regions, `aria-current` on the active

@@ -11,6 +11,7 @@
       "tools/**",
       "assets/brand/logo-v2-full.png",
       "assets/brand/favicon-source.png",
+      "assets/brand/photo-originals/**",
       "*.md"
     ],
     "cleanUrls": false,
