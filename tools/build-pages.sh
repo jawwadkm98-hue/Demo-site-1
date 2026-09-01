@@ -14,6 +14,13 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
+# ---------------------------------------------------------------------------
+# The live origin, no trailing slash. Canonical URLs, og:url, the social-card
+# URL, robots.txt and sitemap.xml are all derived from this — set it once when
+# the domain is live and rebuild.
+SITE_URL="${SITE_URL:-https://example.com}"
+# ---------------------------------------------------------------------------
+
 # Literal search-and-replace. Deliberately avoids sed and ${var//p/r}: both
 # treat "&" in the replacement as the matched text (the latter since bash 5.2),
 # which mangles titles like "News & Projects". Prefix/suffix removal has no
@@ -52,8 +59,13 @@ for entry in "${PAGES[@]}"; do
   body="pages/${slug}.html"
   [ -f "$body" ] || { echo "missing $body" >&2; exit 1; }
 
+  # index lives at the origin root; every other page at /<slug>.html
+  if [ "$slug" = "index" ]; then page_url="$SITE_URL/"; else page_url="$SITE_URL/${slug}.html"; fi
+
   head_html=$(replace_all "$(cat partials/head.html)" '{{TITLE}}' "$(html_escape "$title")")
   head_html=$(replace_all "$head_html" '{{DESC}}' "$(html_escape "$desc")")
+  head_html=$(replace_all "$head_html" '{{CANONICAL}}' "$page_url")
+  head_html=$(replace_all "$head_html" '{{SITE_URL}}' "$SITE_URL")
 
   # Mark the nav link for the current page, then drop the marker attribute.
   header_html=$(replace_all "$(cat partials/header.html)" \
@@ -69,3 +81,19 @@ for entry in "${PAGES[@]}"; do
 
   echo "built ${slug}.html"
 done
+
+# --------------------------------------------------------------- sitemap ---
+{
+  printf '%s\n' '<?xml version="1.0" encoding="UTF-8"?>'
+  printf '%s\n' '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+  for entry in "${PAGES[@]}"; do
+    IFS='|' read -r slug _ _ <<<"$entry"
+    if [ "$slug" = "index" ]; then loc="$SITE_URL/"; else loc="$SITE_URL/${slug}.html"; fi
+    printf '  <url><loc>%s</loc></url>\n' "$loc"
+  done
+  printf '%s\n' '</urlset>'
+} > sitemap.xml
+echo "built sitemap.xml"
+
+printf 'User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n' "$SITE_URL" > robots.txt
+echo "built robots.txt"
