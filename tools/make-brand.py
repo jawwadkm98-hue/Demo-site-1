@@ -32,7 +32,7 @@ master = Image.open(os.path.join(BRAND, 'logo-v2-full.png')).convert('RGBA')
 # The wordmark plate starts a little below y=660 in the master.
 # Rendered at exactly 2x the CSS height so it lands on whole device pixels;
 # keep DISPLAY_H in step with .brand__mark in assets/css/styles.css.
-DISPLAY_H = 68
+DISPLAY_H = 88
 scene = trim(master.crop((0, 0, master.width, 665)))
 emblem = scene.resize((round(scene.width * DISPLAY_H * 2 / scene.height), DISPLAY_H * 2),
                       Image.LANCZOS)

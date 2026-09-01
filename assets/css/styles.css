@@ -174,10 +174,10 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  height: 100px;
+  height: 120px;
 }
 .brand { display: flex; align-items: center; gap: 0.8rem; flex: none; }
-.brand__mark { width: 154px; height: 68px; flex: none; object-fit: contain; }
+.brand__mark { width: 200px; height: 88px; flex: none; object-fit: contain; }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
 .brand__name {
   font-family: var(--font-display);
@@ -681,6 +681,13 @@ p:last-child { margin-bottom: 0; }
   .cta__inner { flex-direction: column; align-items: flex-start; }
 }
 
+/* A 200px mark plus the wordmark overruns the row on a 360px phone, and a
+   120px band eats too much of a short screen. */
+@media (max-width: 520px) {
+  .header-inner { height: 92px; }
+  .brand__mark { width: 145px; height: 64px; }
+}
+
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
@@ -835,8 +842,8 @@ p:last-child { margin-bottom: 0; }
 }
 .site-header.is-stuck .utility { max-height: 0; opacity: 0; }
 /* Clear the taller two-tier masthead. */
-.hero { padding-top: 13rem; }
-.page-hero { padding-top: clamp(11.5rem, 17vw, 14rem); }
+.hero { padding-top: 14.5rem; }
+.page-hero { padding-top: clamp(13rem, 18vw, 15.5rem); }
 
 
 /* ============================================================== notice ==
