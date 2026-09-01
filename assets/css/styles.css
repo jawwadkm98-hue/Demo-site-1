@@ -174,10 +174,10 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  height: 84px;
+  height: 100px;
 }
 .brand { display: flex; align-items: center; gap: 0.8rem; flex: none; }
-.brand__mark { width: 118px; height: 52px; flex: none; object-fit: contain; }
+.brand__mark { width: 154px; height: 68px; flex: none; object-fit: contain; }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
 .brand__name {
   font-family: var(--font-display);
@@ -835,8 +835,8 @@ p:last-child { margin-bottom: 0; }
 }
 .site-header.is-stuck .utility { max-height: 0; opacity: 0; }
 /* Clear the taller two-tier masthead. */
-.hero { padding-top: 12rem; }
-.page-hero { padding-top: clamp(10.5rem, 16vw, 13rem); }
+.hero { padding-top: 13rem; }
+.page-hero { padding-top: clamp(11.5rem, 17vw, 14rem); }
 
 
 /* ============================================================== notice ==
