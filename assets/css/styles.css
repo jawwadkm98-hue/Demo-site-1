@@ -910,3 +910,22 @@ p:last-child { margin-bottom: 0; }
     linear-gradient(0deg, var(--ink) 1%, transparent 55%);
 }
 .page-hero .wrap { position: relative; z-index: 1; }
+
+/* ------------------------------------------------------------------ faq -- */
+/* Native <details>: closed answers stay in the HTML for search engines and AI
+   assistants. Questions come from pages/<slug>.faq via the build. */
+.faq { max-width: 52rem; border-bottom: 1px solid var(--line); }
+.faq__item { border-top: 1px solid var(--line); }
+.faq__item summary {
+  list-style: none; cursor: pointer; position: relative;
+  padding: 1.35rem 3rem 1.35rem 0;
+  font-weight: 600; font-size: 1.08rem; line-height: 1.4; color: var(--white);
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after {
+  content: "+"; position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%);
+  font: 500 1.7rem/1 var(--font-display); color: var(--amber); transition: transform var(--t);
+}
+.faq__item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq__item summary:hover { color: var(--amber); }
+.faq__item p { padding: 0 3rem 1.5rem 0; margin: 0; max-width: 46rem; color: var(--fog-light); }
