@@ -25,10 +25,8 @@
         <p class="eyebrow">Send an inquiry</p>
         <h2 class="h-md">Tell us about the job</h2>
 
-        <!-- Formspree: set FORM_ENDPOINT in _build/config.py, e.g. https://formspree.io/f/xxxxxxx, then rebuild. -->
-        <form class="form" data-contact-form action="{{FORM_ENDPOINT}}" method="POST"
-              data-phone="{{PHONE}}" data-email="{{EMAIL}}" novalidate style="margin-top:2rem;">
-          <input type="hidden" name="_subject" value="New quote request from beltwaydemo.com">
+        <form class="form" id="quote-form" data-contact-form action="{{FORM_ENDPOINT}}" method="POST" style="margin-top:2rem;">
+          <input type="hidden" name="_subject" value="New quote request – beltwaydemo.com">
           <div style="position:absolute;left:-9999px;" aria-hidden="true">
             <label for="_gotcha">Leave this field empty</label>
             <input id="_gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
@@ -109,6 +107,10 @@
           <div class="contact-line">
             <dt>Email</dt>
             <dd><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></dd>
+          </div>
+          <div class="contact-line">
+            <dt>Instagram</dt>
+            <dd>{{INSTAGRAM_LINK}}</dd>
           </div>
           <div class="contact-line">
             <dt>Office</dt>
