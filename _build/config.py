@@ -19,6 +19,10 @@ PHONE_E164 = "+17038615354"
 # Public site email (per owner). Alternative: "jawwad@beltwaydemo.com"
 EMAIL = "info@beltwaydemo.com"
 
+# --- Instagram --------------------------------------------------------------
+INSTAGRAM_URL = "https://www.instagram.com/beltwaydemolition/"
+INSTAGRAM_HANDLE = "@beltwaydemolition"
+
 # --- Address & licensing (from the WMB LLC Maryland license record) ---------
 STREET = "145 Fleet St #142"
 CITY = "National Harbor"
@@ -28,11 +32,9 @@ MHIC = "154299"          # Maryland Home Improvement Commission license
 MD_HBR = "9597"          # Maryland Home Builder Registration
 
 # --- Contact form -----------------------------------------------------------
-# Create a form at https://formspree.io (free tier is fine), then paste its
-# endpoint here (have it deliver to the EMAIL above), e.g. "https://formspree.io/f/abcdwxyz".
-# While this still says FORM_ENDPOINT the form shows a "call or email us"
-# message instead of pretending to submit.
-FORM_ENDPOINT = "FORM_ENDPOINT"
+# Formspree form xbgdbpol. The contact form posts here with JavaScript and,
+# if JavaScript is off, as a normal form submission.
+FORM_ENDPOINT = "https://formspree.io/f/xbgdbpol"
 
 SITE_URL = "https://beltwaydemo.com"
-ASSET_VERSION = "20261018"   # bump when styles.css / main.js change (cache-busting)
+ASSET_VERSION = "20261018b"  # bump when styles.css / main.js change (cache-busting)

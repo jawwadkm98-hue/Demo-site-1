@@ -101,43 +101,42 @@
   }
 
   /* ------------------------------------------------------ contact form --- */
-  /* Posts to the Formspree endpoint in the form's action attribute
-     (set FORM_ENDPOINT in _build/config.py and rebuild). Without JS the form
-     still submits normally. While the endpoint is unset, visitors are told
-     to call or email instead, so no lead is silently lost. */
+  /* Posts to the Formspree URL in the form's action attribute. Without
+     fetch the browser submits the form normally. */
   var form = document.querySelector('[data-contact-form]');
   if (form) {
     var status = form.querySelector('.form-status');
-    var say = function (msg) {
+    var btn = form.querySelector('[type="submit"]');
+    var showStatus = function (kind, msg) {
       if (!status) return;
       status.textContent = msg;
+      status.classList.remove('is-success', 'is-error');
       status.classList.add('is-visible');
+      if (kind) status.classList.add(kind === 'error' ? 'is-error' : 'is-success');
+      status.setAttribute('role', kind === 'error' ? 'alert' : 'status');
     };
-    var fallback = 'please call ' + (form.getAttribute('data-phone') || '') +
-                   ' or email ' + (form.getAttribute('data-email') || '') + '.';
     form.addEventListener('submit', function (e) {
-      var action = form.getAttribute('action') || '';
-      if (!form.reportValidity()) { e.preventDefault(); return; }
-      if (!/^https?:\/\//.test(action)) {
-        e.preventDefault();
-        say('Online requests are not switched on yet \u2014 ' + fallback);
+      if (!window.fetch || !window.FormData) return;
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
         return;
       }
-      if (!window.fetch || !window.FormData) return; /* plain POST */
-      e.preventDefault();
-      var btn = form.querySelector('[type="submit"]');
       if (btn) btn.disabled = true;
-      say('Sending\u2026');
-      fetch(action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-        .then(function (r) {
-          if (!r.ok) throw new Error('HTTP ' + r.status);
-          form.reset();
-          say('Thanks \u2014 your request has been sent. We will be in touch shortly.');
-        })
-        .catch(function () {
-          say('Sorry, that did not go through \u2014 ' + fallback);
-        })
-        .then(function () { if (btn) btn.disabled = false; });
+      showStatus('', 'Sending\u2026');
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      }).then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        form.reset();
+        showStatus('success', 'Thanks \u2014 your request has been sent. We will be in touch shortly.');
+      }).catch(function () {
+        showStatus('error', 'Sorry, that did not go through. Please try again.');
+      }).then(function () {
+        if (btn) btn.disabled = false;
+      });
     });
   }
 

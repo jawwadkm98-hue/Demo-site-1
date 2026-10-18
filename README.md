@@ -34,9 +34,10 @@ All phone, email, address, license numbers and the form endpoint live in **`_bui
 |---|---|
 | `PHONE_DISPLAY` / `PHONE_E164` | (703) 861-5354 / +17038615354 (owner's choice, Oct 18) |
 | `EMAIL` | info@beltwaydemo.com |
+| `INSTAGRAM_URL` | https://www.instagram.com/beltwaydemolition/ |
 | Address | 145 Fleet St #142, National Harbor, MD 20745 |
 | `MHIC` / `MD_HBR` | 154299 / 9597 |
-| `FORM_ENDPOINT` | `FORM_ENDPOINT` (placeholder; see open items) |
+| `FORM_ENDPOINT` | https://formspree.io/f/xbgdbpol |
 
 To change the phone number, edit both phone lines (the display format and the +1 format) and rebuild:
 
@@ -86,11 +87,10 @@ Page bodies are in `_build/content/*.html`, and titles and meta descriptions are
 
 **Conversion**
 - Contact form:
-  - It uses Formspree-style markup (`action="FORM_ENDPOINT" method="POST"`), with a honeypot field
-    and a `_subject` field.
-  - The "placeholder form, nothing is sent" text is gone.
-  - While the endpoint is unset, the form tells visitors to call or email. Once it's set, it submits
-    by fetch and shows success or error messages, and it still works without JavaScript.
+  - It posts to Formspree (`action="https://formspree.io/f/xbgdbpol" method="POST"`), with a honeypot
+    field, a `_subject` field, and the visitor's `email` field as the reply-to.
+  - With JavaScript it submits by `fetch` and shows inline success and error messages. Without
+    JavaScript the browser posts the same form.
 - "Call (703) 861-5354" tap links in the hero of every page and in every call-to-action block.
 - A sticky call / free-quote bar on phones (screen width 760px or less).
 - A branded `404.html` (Firebase serves it automatically for unknown URLs).
@@ -123,8 +123,8 @@ Page bodies are in `_build/content/*.html`, and titles and meta descriptions are
    access to the Firebase project. `"site": "beltway-demo"` comes from the domain's
    `hosting-site=beltway-demo` DNS record. If the CLI asks for a project, run `firebase use --add`
    and pick the project that owns that site.
-2. **Formspree endpoint.** Create a free form at formspree.io (send it to info@beltwaydemo.com),
-   paste the URL into `FORM_ENDPOINT` in `_build/config.py`, and run `python3 _build/build.py`.
+2. **Formspree endpoint.** Wired to `https://formspree.io/f/xbgdbpol`. Confirm that form delivers to
+   info@beltwaydemo.com, then publish with `firebase deploy --only hosting`.
 3. **Fix www.** In the Firebase console, go to Hosting → Add custom domain → `www.beltwaydemo.com`
    and choose "Redirect to beltwaydemo.com". Then follow the DNS steps it shows at IONOS. This can't
    be done in `firebase.json`, because host-level redirects are set per domain in the console. Today,

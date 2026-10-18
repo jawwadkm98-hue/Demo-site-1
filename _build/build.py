@@ -103,6 +103,23 @@ def trust():
     return f'<section class="trust" aria-label="Licensing and coverage"><div class="wrap"><ul class="trust__list">{lis}</ul></div></section>'
 
 
+IG_ICON = (
+    '<svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    '<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/>'
+    '<circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>'
+    '<circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/>'
+    '</svg>'
+)
+
+
+def instagram_link():
+    return (
+        f'<a class="ig-link" href="{esc(C.INSTAGRAM_URL)}" target="_blank" rel="noopener" '
+        f'aria-label="Beltway Demolition on Instagram">'
+        f'{IG_ICON}<span>{esc(C.INSTAGRAM_HANDLE)}</span></a>'
+    )
+
+
 def expand(text, page):
     text = text.replace('href="tel:{{TEL}}">Call {{PHONE}}', 'href="tel:{{TEL}}">{{PHONE_ICON}} Call {{PHONE}}')
     text = text.replace('class="btn btn--ghost" href="tel:', 'class="btn btn--ghost btn--call" href="tel:')
@@ -113,6 +130,7 @@ def expand(text, page):
     text = text.replace("{{PHONE_ICON}}", PHONE_ICON)
     text = text.replace("{{MHIC}}", C.MHIC).replace("{{HBR}}", C.MD_HBR)
     text = text.replace("{{ADDRESS}}", esc(ADDRESS_ONE_LINE)).replace("{{FORM_ENDPOINT}}", C.FORM_ENDPOINT)
+    text = text.replace("{{INSTAGRAM_LINK}}", instagram_link())
     text = text.replace("{{CRUMBS}}", crumbs(page))
     text = re.sub(r"\{\{PIC:([^|]+)\|([^|]+)\|(\d+)\|(\d+)(\|hero)?\}\}",
                   lambda m: picture(m[1], m[2], m[3], m[4], priority=bool(m[5])), text)
@@ -157,7 +175,7 @@ def business_ld():
         "knowsAbout": ["Residential demolition", "House demolition", "Commercial demolition",
                        "Interior demolition", "Selective demolition", "Concrete removal",
                        "Site clearing", "Demolition debris hauling"],
-        "sameAs": [C.PARENT_URL],
+        "sameAs": [C.PARENT_URL, C.INSTAGRAM_URL],
     }
 
 
@@ -370,6 +388,7 @@ def footer():
         <ul>
           <li><a href="tel:{C.PHONE_E164}">{C.PHONE_DISPLAY}</a></li>
           <li><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li>
+          <li>{instagram_link()}</li>
           <li>{esc(C.STREET)}<br>{esc(C.CITY)}, {C.REGION} {C.POSTAL}</li>
         </ul>
       </div>

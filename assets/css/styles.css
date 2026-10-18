@@ -571,12 +571,27 @@ p:last-child { margin-bottom: 0; }
 .form-status {
   display: none;
   padding: 0.9rem 1.1rem;
-  border: 1px solid var(--amber);
-  background: var(--amber-soft);
+  border: 1px solid var(--line);
+  background: var(--steel-800);
   border-radius: var(--radius);
   font-size: 0.92rem;
+  color: var(--fog-light);
 }
 .form-status.is-visible { display: block; }
+.form-status.is-success {
+  border-color: var(--amber);
+  background: var(--amber-soft);
+  color: var(--white);
+}
+.form-status.is-error {
+  border-color: #e07a6a;
+  background: rgba(224, 122, 106, 0.14);
+  color: #ffd7d0;
+}
+.form button.btn:disabled {
+  opacity: 0.55;
+  cursor: progress;
+}
 
 .contact-line { display: grid; gap: 0.35rem; padding: 1.35rem 0; border-bottom: 1px solid var(--line); }
 .contact-line:first-of-type { border-top: 1px solid var(--line); }
@@ -607,6 +622,8 @@ p:last-child { margin-bottom: 0; }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
 .footer-col a { font-size: 0.93rem; color: var(--fog-light); transition: color var(--t); }
 .footer-col a:hover { color: var(--amber); }
+.ig-link { display: inline-flex; align-items: center; gap: 0.45rem; }
+.ig-icon { width: 1.05em; height: 1.05em; flex: none; }
 .footer-about p { font-size: 0.93rem; color: var(--fog); max-width: 38ch; margin-top: 1.25rem; }
 .footer-bottom {
   display: flex;
