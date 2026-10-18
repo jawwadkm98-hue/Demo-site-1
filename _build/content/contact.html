@@ -1,0 +1,135 @@
+  <section class="page-hero">
+    <div class="page-hero__photo">
+      {{PIC:img/photos/commercial-wide.jpg|Excavator opening up the front of a commercial building during demolition|1400|875|hero}}
+    </div>
+    <div class="wrap">
+      {{CRUMBS}}
+      <p class="eyebrow">Contact</p>
+      <h1 class="h-lg">Request a Demolition Quote</h1>
+      <p class="lede">
+        Send the address, a few photos and what you need gone. We will come back
+        with what the job involves and what it costs.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="tel:{{TEL}}">{{PHONE_ICON}} Call {{PHONE}}</a>
+        <a class="btn btn--ghost" href="mailto:{{EMAIL}}">Email {{EMAIL}}</a>
+      </div>
+    </div>
+  </section>
+
+  {{TRUST}}
+
+  <section class="section section--dark">
+    <div class="wrap split">
+      <div data-reveal>
+        <p class="eyebrow">Send an inquiry</p>
+        <h2 class="h-md">Tell us about the job</h2>
+
+        <!-- Formspree: set FORM_ENDPOINT in _build/config.py, e.g. https://formspree.io/f/xxxxxxx, then rebuild. -->
+        <form class="form" data-contact-form action="{{FORM_ENDPOINT}}" method="POST"
+              data-phone="{{PHONE}}" data-email="{{EMAIL}}" novalidate style="margin-top:2rem;">
+          <input type="hidden" name="_subject" value="New quote request from beltwaydemo.com">
+          <div style="position:absolute;left:-9999px;" aria-hidden="true">
+            <label for="_gotcha">Leave this field empty</label>
+            <input id="_gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
+            </div>
+            <div class="field">
+              <label for="company">Company (optional)</label>
+              <input id="company" name="company" type="text" autocomplete="organization" placeholder="Company name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@example.com" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(301) 555-0100">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="interest">Type of work</label>
+              <select id="interest" name="interest">
+                <option>House / residential demolition</option>
+                <option>Commercial demolition</option>
+                <option>Interior demolition / strip-out</option>
+                <option>Concrete, slab or foundation removal</option>
+                <option>Site clearing and grading</option>
+                <option>Hauling and debris removal</option>
+                <option>Not sure / something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="location">Site address or city</label>
+              <input id="location" name="location" type="text" placeholder="e.g. Oxon Hill, MD">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">About the job</label>
+            <textarea id="message" name="message"
+              placeholder="What is coming down, roughly how big it is, and when you need it done." required></textarea>
+          </div>
+
+          <p class="form-note">
+            Photos help us price accurately &mdash; email them to
+            <a href="mailto:{{EMAIL}}" style="color:var(--amber)">{{EMAIL}}</a> after you send this form.
+            We use your details only to respond to your request. See our
+            <a href="/privacy-policy" style="color:var(--amber)">privacy policy</a>.
+          </p>
+
+          <div class="btn-row" style="margin-top:0;">
+            <button class="btn btn--primary" type="submit">
+              Send Request {{ARROW}}
+            </button>
+          </div>
+
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div data-reveal="120">
+        <p class="eyebrow">Direct lines</p>
+        <h2 class="h-md">Reach us directly</h2>
+        <dl style="margin:2rem 0 0;">
+          <div class="contact-line">
+            <dt>Phone</dt>
+            <dd><a href="tel:{{TEL}}">{{PHONE}}</a></dd>
+          </div>
+          <div class="contact-line">
+            <dt>Email</dt>
+            <dd><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></dd>
+          </div>
+          <div class="contact-line">
+            <dt>Office</dt>
+            <dd>Beltway Demolition (WMB LLC)<br>{{ADDRESS}}</dd>
+          </div>
+          <div class="contact-line">
+            <dt>Service area</dt>
+            <dd><a href="/demolition-prince-georges-county-md">Prince George's County</a>,
+                <a href="/demolition-montgomery-county-md">Montgomery County</a>,
+                <a href="/demolition-anne-arundel-county-md">Anne Arundel County</a><br>and the rest of
+                <a href="/areas-we-serve">Maryland</a></dd>
+          </div>
+          <div class="contact-line">
+            <dt>Licensing</dt>
+            <dd>A division of WMB LLC &middot; MHIC #{{MHIC}}<br>Maryland Home Builder Registration #{{HBR}}</dd>
+          </div>
+          <div class="contact-line">
+            <dt>Documents</dt>
+            <dd>License documentation and insurance<br>certificates issued on request</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>

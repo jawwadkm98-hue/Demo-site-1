@@ -101,21 +101,43 @@
   }
 
   /* ------------------------------------------------------ contact form --- */
-  /* No backend yet — the form validates locally and confirms. Wire the
-     submit handler to a real endpoint when one exists. */
+  /* Posts to the Formspree endpoint in the form's action attribute
+     (set FORM_ENDPOINT in _build/config.py and rebuild). Without JS the form
+     still submits normally. While the endpoint is unset, visitors are told
+     to call or email instead, so no lead is silently lost. */
   var form = document.querySelector('[data-contact-form]');
   if (form) {
+    var status = form.querySelector('.form-status');
+    var say = function (msg) {
+      if (!status) return;
+      status.textContent = msg;
+      status.classList.add('is-visible');
+    };
+    var fallback = 'please call ' + (form.getAttribute('data-phone') || '') +
+                   ' or email ' + (form.getAttribute('data-email') || '') + '.';
     form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      var status = form.querySelector('.form-status');
-      if (status) {
-        status.textContent =
-          'Thanks — your enquiry has been captured. This demo form is not yet ' +
-          'connected to a mail service, so nothing was sent.';
-        status.classList.add('is-visible');
+      var action = form.getAttribute('action') || '';
+      if (!form.reportValidity()) { e.preventDefault(); return; }
+      if (!/^https?:\/\//.test(action)) {
+        e.preventDefault();
+        say('Online requests are not switched on yet \u2014 ' + fallback);
+        return;
       }
-      form.reset();
+      if (!window.fetch || !window.FormData) return; /* plain POST */
+      e.preventDefault();
+      var btn = form.querySelector('[type="submit"]');
+      if (btn) btn.disabled = true;
+      say('Sending\u2026');
+      fetch(action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+        .then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          form.reset();
+          say('Thanks \u2014 your request has been sent. We will be in touch shortly.');
+        })
+        .catch(function () {
+          say('Sorry, that did not go through \u2014 ' + fallback);
+        })
+        .then(function () { if (btn) btn.disabled = false; });
     });
   }
 
