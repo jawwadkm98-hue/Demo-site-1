@@ -10,10 +10,10 @@ PARENT_COMPANY = "WMB LLC"
 PARENT_URL = "https://wmbre.com/"
 
 # --- Public phone -----------------------------------------------------------
-# Current public number (per owner, Oct 18 2026). To change it, edit BOTH lines
+# Current public number (per owner, Oct 19 2026). To change it, edit BOTH lines
 # (display format and +1 E.164 format), then rebuild.
-PHONE_DISPLAY = "(703) 861-5354"
-PHONE_E164 = "+17038615354"
+PHONE_DISPLAY = "(301) 246-2010"
+PHONE_E164 = "+13012462010"
 
 # --- Public email -----------------------------------------------------------
 # Public site email (per owner). Alternative: "jawwad@beltwaydemo.com"
