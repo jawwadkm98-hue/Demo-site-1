@@ -32,7 +32,7 @@ All phone, email, address, license numbers and the form endpoint live in **`_bui
 
 | Setting | Current value |
 |---|---|
-| `PHONE_DISPLAY` / `PHONE_E164` | (703) 861-5354 / +17038615354 (owner's choice, Oct 18) |
+| `PHONE_DISPLAY` / `PHONE_E164` | (301) 246-2010 / +13012462010 (owner's choice, Oct 19) |
 | `EMAIL` | info@beltwaydemo.com |
 | `INSTAGRAM_URL` | https://www.instagram.com/beltwaydemolition/ |
 | Address | 145 Fleet St #142, National Harbor, MD 20745 |
@@ -91,7 +91,7 @@ Page bodies are in `_build/content/*.html`, and titles and meta descriptions are
     field, a `_subject` field, and the visitor's `email` field as the reply-to.
   - With JavaScript it submits by `fetch` and shows inline success and error messages. Without
     JavaScript the browser posts the same form.
-- "Call (703) 861-5354" tap links in the hero of every page and in every call-to-action block.
+- "Call (301) 246-2010" tap links in the hero of every page and in every call-to-action block.
 - A sticky call / free-quote bar on phones (screen width 760px or less).
 - A branded `404.html` (Firebase serves it automatically for unknown URLs).
 
@@ -132,7 +132,7 @@ Page bodies are in `_build/content/*.html`, and titles and meta descriptions are
 4. **Google Business Profile.** Create and verify it as "Beltway Demolition", primary category
    "Demolition contractor", using the same phone as the site. If 145 Fleet St #142 is a mailbox or
    virtual office, hide the address and set service areas instead.
-5. **Phone consistency.** The site uses (703) 861-5354 and info@beltwaydemo.com. The license record
+5. **Phone consistency.** The site uses (301) 246-2010 and info@beltwaydemo.com. The license record
    shows (703) 626-7861 and wmbre.com shows (443) 267-4049. Use one number on the GBP, directories,
    proposals and wmbre.com.
 6. **Check SDAT.** Bizapedia lists a "BELTWAY DEMOLITION" in Owings Mills, MD. Check Maryland SDAT
