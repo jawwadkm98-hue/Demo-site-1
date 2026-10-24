@@ -151,9 +151,9 @@ def business_ld():
         "url": f"{C.SITE_URL}/",
         "logo": f"{C.SITE_URL}/assets/brand/logo-emblem-v2.png",
         "image": f"{C.SITE_URL}/assets/brand/social-card.jpg",
-        "description": "Demolition contractor for residential, commercial and interior demolition, "
-                       "concrete removal and site clearing across Maryland. "
-                       "A division of WMB LLC.",
+        "description": "Full-service demolition contractor for house teardowns, commercial building "
+                       "demolition, structural and exterior demolition, concrete removal and debris "
+                       "haul-off across Maryland. A division of WMB LLC.",
         "telephone": C.PHONE_E164,
         "email": C.EMAIL,
         "address": {"@type": "PostalAddress", "streetAddress": C.STREET, "addressLocality": C.CITY,
@@ -172,9 +172,10 @@ def business_ld():
             {"@type": "EducationalOccupationalCredential", "credentialCategory": "license",
              "name": f"Maryland Home Builder Registration #{C.MD_HBR}"},
         ],
-        "knowsAbout": ["Residential demolition", "House demolition", "Commercial demolition",
-                       "Interior demolition", "Selective demolition", "Concrete removal",
-                       "Site clearing", "Demolition debris hauling"],
+        "knowsAbout": ["House demolition", "Residential demolition", "Commercial demolition",
+                       "Structural demolition", "Exterior demolition", "Concrete removal",
+                       "Demolition debris hauling", "Site clearing", "Selective demolition",
+                       "Interior demolition"],
         "sameAs": [C.PARENT_URL, C.INSTAGRAM_URL],
     }
 
@@ -347,8 +348,9 @@ def footer():
           </span>
         </a>
         <p>
-          Residential, commercial and interior demolition, concrete removal and
-          site clearing across Maryland.
+          Full-service demolition across Maryland: house and commercial
+          teardowns, structural and exterior work, concrete removal and
+          debris haul-off.
         </p>
       </div>
 
